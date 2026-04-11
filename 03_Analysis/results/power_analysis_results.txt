@@ -1,0 +1,38 @@
+=================================================================
+Post-hoc Power Analysis: Perioperative Oral Care Study
+=================================================================
+N = 47 prefectures, alpha = 0.05
+
+--- Observed R² Based Power ---
+  Model 1 (Unadjusted, k=1)
+    R² = 0.0089, Cohen's f² = 0.0090
+    Post-hoc power = 9.7%
+
+  Model 2 (Adjusted,   k=4)
+    R² = 0.1967, Cohen's f² = 0.2449
+    Post-hoc power = 73.0%
+
+--- Power by Effect Size at N=47, k=4 (Model 2) ---
+  Small (f²=0.02): power = 9.6%
+  Medium (f²=0.15): power = 49.2%
+  Large  (f²=0.35): power = 88.4%
+
+--- N Required for 80% Power (k=4) ---
+  Small (f²=0.02): N needed = 999 [exceeds 47 prefectures]
+  Medium (f²=0.15): N needed = 85 [exceeds 47 prefectures]
+  Large  (f²=0.35): N needed = 40
+
+--- Manuscript Limitations (suggested text) ---
+
+Post-hoc power analysis using a non-central F distribution
+(alpha = 0.05) indicated that with N = 47 prefectures and k = 4 predictors,
+the adjusted model (R2 = 0.197; Cohen's f2 = 0.245) achieved
+approximately 73% power — below the conventional 80% threshold.
+For a medium effect size (f2 = 0.15), approximately N = 85
+administrative units would be required to achieve 80% power,
+which exceeds Japan's fixed unit of 47 prefectures.
+Accordingly, the null finding should be interpreted as absence of
+a detectable association at this ecological resolution rather than
+proof of no association; Type II error cannot be excluded.
+
+=================================================================

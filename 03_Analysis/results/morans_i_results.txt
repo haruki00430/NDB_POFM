@@ -1,0 +1,5 @@
+Moran's I for dental_mgmt_rate:
+I = 0.2103
+p-value (permutation) = 0.0280
+z-score = 2.0828
+n_permutations = 999

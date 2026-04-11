@@ -1,0 +1,168 @@
+日本における周術期口腔機能管理の実施における地域格差：NDBオープンデータを用いた都道府県レベルの空間疫学的分析と供給側要因の検討
+日本における周術期口腔機能管理（Perioperative Oral Functional Management: POFM）は、周術期の合併症予防において不可欠な医療介入として確立されている。特に、がん手術や化学療法、放射線療法を受ける患者において、口腔内の病原微生物が原因となる誤嚥性肺炎や手術部位感染（SSI）、口腔粘膜炎などの重篤な合併症を低減させるエビデンスが蓄積されている 1。日本政府は2012年度の診療報酬改定において、これら口腔ケアの重要性を認め、「周術期等口腔機能管理料」を新設した 4。この制度導入以来、多職種連携による医療・歯科の協働が全国的に推進されてきたが、その実施状況には都道府県間で顕著な格差が存在することが指摘されている 7。本報告書は、第10回ナショナルデータベース（NDB）オープンデータ（2023年度分）を用いた都道府県レベルの生態学的分析に基づき、POFMの実施密度とがん手術需要の相関、および空間的なクラスタリングを解析するとともに、先行研究を網羅的に参照してその地域格差を規定する構造的要因を考察するものである。
+周術期口腔機能管理の臨床的背景と重要性
+周術期口腔機能管理の主目的は、口腔内の衛生状態と機能を最適化することで、全身的な感染リスクを抑制することにある。口腔内には数百種類の細菌が存在し、特に歯周病原細菌やデンタルプラークは、外科的手術に伴う侵襲や免疫力低下時に重篤な感染症の起点となる 2。
+合併症予防のメカニズム
+術後肺炎（Postoperative Pneumonia: PP）の発生機序は、術中の挿管や術後の意識レベル低下、嚥下機能の低下に伴い、病原微生物を含む口腔・咽頭分泌物が下気道へ微量誤嚥（micro-aspiration）されることに関連している 2。先行研究によれば、食道がん手術患者においてPOFMを実施することで、術後肺炎の発症率を約50%減少させることが示されている（aOR = 0.50, p = 0.03） 4。また、肺がん手術においても、POFMの欠如が術後肺炎の独立したリスク因子であることが確認されている 12。
+さらに、腹部手術や大腸がん手術における手術部位感染（SSI）についても、口腔ケアが有意な予防効果を持つことが明らかになりつつある 3。これは、口腔内の炎症管理が全身的な炎症性サイトカインの抑制や栄養状態の維持に寄与するためと考えられており、特に低アルブミン血症を呈する栄養不良患者においてその効果が顕著である 6。これらの臨床的エビデンスは、POFMが単なる「清掃」ではなく、外科治療の予後を左右する「専門的医療介入」であることを裏付けている。
+方法論的枠組み：NDBオープンデータを用いた生態学的分析
+本研究では、2023年度（2023年4月〜2024年3月）の第10回NDBオープンデータを主たるデータソースとして使用した。NDBは日本全国のレセプト情報を網羅しており、医療の質や資源配分の実態を把握するための最も強力なビッグデータの一つである 16。
+変数の定義と指標化
+解析の主要アウトカムである「POFM密度」は、都道府県ごとの「周術期等口腔機能管理料（B001-2およびB001-3）」の年間算定回数を、各都道府県の人口で除し、10万人あたりの値として算出した 19。これに対し、主要な曝露変数として、がん手術の需要を反映する16種類の代表的なKコード（胃切除、肺切除、肝切除等）の合計算定回数を用いた 19。
+指標カテゴリ
+具体的な指標・算定コード
+定義・目的
+POFM密度
+B001-2, B001-3
+10万人あたりの年間算定回数。管理の実施強度を反映。
+がん手術需要
+K463, K511, K513, K529-2, K655, K695, K719等（16種）
+10万人あたりのがん手術件数。潜在的なケア需要のプロキシ。
+社会経済要因
+高齢化率、1人あたり所得、人口密度
+都道府県レベルの交絡因子としての調整変数。
+医療資源供給
+10万人あたり医師数、歯科医師数
+供給側能力の感度分析用変数。
+データ出典：19
+統計的および空間的解析手法
+都道府県間の相関を分析するため、通常の最小二乗法（OLS）に加え、空間的自己相関を考慮した空間回帰モデルを採用した。医療利用データは地理的に隣接する地域間で類似する傾向（空間的依存性）があるため、グローバルMoran’s I統計量を用いて自己相関の有無を確認した 19。空間ラグモデル（Spatial Lag Model: SLM）を選択し、隣接する都道府県からの「スピルオーバー効果」をモデル化した。
+2023年度分析結果の要約と地域的特徴
+2023年度のデータに基づくと、POFM密度の都道府県間格差は最大2.25倍に達しており、平均値は10万人あたり103,963、変動係数（CV）は19.6%であった 19。これに対し、がん手術需要の格差は1.65倍（CV 12.0%）に留まっており、手術が必要な患者の分布以上に、口腔ケアの提供体制に偏りがあることが示唆された。
+記述統計および都道府県別の変動
+指標
+平均値 (SD)
+最小値
+最大値
+変動係数 (%)
+POFM密度 (/10万人)
+103,963 (20,390)
+68,804
+154,850
+19.6
+がん手術需要 (/10万人)
+237.7 (28.5)
+173.6
+287.0
+12.0
+高齢化率 (%)
+31.2 (3.1)
+24.4
+38.3
+--
+1人あたり所得 (万円)
+3,039 (280)
+2,553
+4,055
+--
+出典：19
+都道府県別の詳細な分布を確認すると、東海・近畿・中国地方などの西日本において高い実施密度が観察される一方、北海道、東北の一部、沖縄において低い密度が確認された。特筆すべきは、東京都、大阪府、愛知県といった大都市圏におけるがん手術需要は極めて高いものの、必ずしもPOFM密度がそれと比例して最高値を示すわけではないという点である 19。
+需要と供給の「デカップリング」
+OLS回帰分析の結果、がん手術需要とPOFM密度の間には、調整後モデルにおいても有意な相関は認められなかった（） 19。この結果は、患者側のニーズ（手術件数）がPOFMの実施量を規定しているのではなく、病院側の提供体制や地域の連携慣習といった供給側の要因が主導権を握っていることを強く示唆している 7。
+空間的自己相関と地域的クラスタリングの深化
+空間的解析の結果、POFM密度には正の空間的自己相関（Moran’s I = 0.210, p = 0.024）が認められた 19。これは、実施率の高い（または低い）都道府県が地理的に固まって存在していることを意味する。
+空間ラグモデル（SLM）によるスピルオーバー効果の確認
+LMテストの結果、空間ラグモデル（SLM）が最適な仕様として選択された。推定された空間ラグ係数（）は、隣接都道府県のPOFM実施状況が当該県の実施率を押し上げる強い地理的波及効果を持っていることを示している 19。
+推定パラメータ
+係数 (Estimate)
+z統計量
+p値
+空間ラグ ()
+0.354
+3.14
+0.002
+がん手術需要 ()
+114.2
+0.79
+0.431
+高齢化率
+321.5
+0.14
+0.887
+出典：19
+このスピルオーバー効果は、広域的な医療ネットワーク、大学病院による周辺地域への技術指導、歯科医師会による地域連携モデルの共有などが、行政境界を越えて機能していることを示唆している 23。
+LISA分析による「ホットスポット」と「コールドスポット」
+局所的な Moran’s I（LISA）解析により、統計的に有意な3つのHigh-High（HH）クラスターと3つのLow-Low（LL）クラスターが特定された。
+HHクラスター（高実施地域）：兵庫県、岡山県、佐賀県 これらの地域は、日本における医科歯科連携の先駆的なモデルを構築してきた歴史を持つ。例えば岡山大学病院は2008年に「周術期管理センター（PERIO）」を設置し、多職種チームによる全人的な周術期管理を体系化した 27。また、佐賀県においてもがん拠点病院を中心とした地域連携パスが早期から導入されており、これらの成功事例が周辺県へ波及している 13。
+LLクラスター（低実施地域）：北海道、岩手県、沖縄県 これらの地域は地理的に周辺部に位置し、広大な面積や離島を抱えるといったアクセシビリティの課題がある 30。また、後述するように、病院歯科の設置率や専門的人材の偏在が、実施率を抑制するボトルネックとなっている可能性が高い 21。
+考察：地域格差を規定する供給側の構造的要因
+生態学的分析で見られた需要と供給の乖離を解釈するためには、日本の医療供給体制における歯科の位置づけを検討する必要がある。
+病院歯科の設置状況と紹介慣習
+日本における全病院のうち、歯科または歯科口腔外科を標榜している割合は約26.1%〜28%に過ぎない 9。この病院歯科の有無が、POFM実施の決定的な要因となる。先行研究によれば、病院内に歯科が設置されている場合、医師による歯科紹介率は50.4%に達するが、設置されていない場合は19.5%まで低下する 24。
+病院歯科が存在しない施設においては、地域の開業歯科医院との連携が必要となるが、これには「紹介状の作成」「予約調整」「情報の共有」といった事務的・時間的なコストが伴う 35。医師が多忙を極める急性期病院において、これらのコストが障壁となり、結果として「紹介習慣の欠如」を招いている 24。
+専門的人材の偏在：歯科医師と歯科衛生士
+歯科医療資源の偏在も無視できない要因である。日本全体の歯科医師数は過剰傾向にあるとされるが、病院に勤務する歯科医師は全体の約11.7%に過ぎず、その多くが大都市圏や大学病院に集中している 26。 歯科衛生士についても同様の傾向が見られる。POFMにおいて実質的な処置を担う歯科衛生士の役割は極めて大きいが、急性期医療に対応できる知識と技能を備えた衛生士は不足している 39。アンケート調査によれば、専門的な研修を受けた歯科衛生士の不在が、POFM実施の主要な阻害因子として挙げられている 35。
+看護職の関与とトレーニングの課題
+周術期の日常的な口腔ケアは看護師が担うことが多いが、専門的な歯科介入への「繋ぎ」の部分で課題がある。日本の看護師の91%以上が口腔ケアの必要性を認識しているものの、適切なトレーニングを受けているのは30%程度に留まっている 41。このため、看護師が口腔内のトラブル（動揺歯や重度の歯周炎）を早期に発見し、歯科受診を促すという「スクリーニング」機能が十分に働いていない 42。
+社会経済的要因と「地方の不利益」
+本分析でLLクラスターとなった北海道、岩手、沖縄は、いずれも「地方（Rural）」の特性を強く持っている。地方における医療格差は、単なる所得の問題だけでなく、物理的な距離と交通インフラの制約が重なっている 30。
+地方度指数（RIJ）と歯科アクセスの関連
+日本の地方度指数（Rurality Index for Japan: RIJ）を用いた研究では、地方度が高いほど在宅医療や専門的な医療サービスの利用率が低下する傾向が示されている 30。歯科医療においても、地方では「かかりつけ歯科医」の保持率が都市部より低く、定期的な歯科受診の習慣が乏しいことが報告されている 45。 手術前の短期間に歯科受診を完了させる必要があるPOFMにおいて、近隣に歯科医院がない、あるいは病院との連携パスが確立されていない地方都市では、患者が適切なケアを受けられない「地理的障壁」が顕在化している 32。
+所得と教育レベルの影響
+生態学的レベルの分析では、都道府県の1人あたり所得や大学進学率が、予防的歯科処置（歯石除去等）の算定率と正の相関を示すことが確認されている 21。所得格差は、保険診療の3割自己負担（あるいは高齢者の1〜2割負担）を支払う能力や、健康リテラシーの差となって現れる 1。特にPOFMは、手術そのものに付随する「追加的な処置」とみなされることが多く、患者側の経済的余裕や理解度が低い地域では、実施率が抑制される可能性がある 47。
+診療報酬改定の変遷と今後の展望
+日本政府は2012年の導入以来、2年ごとの診療報酬改定を通じてPOFMの普及を図ってきた 48。
+2020年度・2022年度改定の意義
+これらの改定では、対象疾患の拡大に加え、周術期以外の管理（放射線療法・化学療法、緩和ケア）における口腔機能管理料の評価が引き上げられた 47。これにより、「治療中心の歯科」から「全身管理に寄与する歯科」へのシフトが制度的に強化されている 49。
+2024年度改定と今後の課題
+2024年度の改定では、医療従事者の賃上げや物価高騰への対応とともに、過疎地における医療提供への加算が新設された 48。また、デジタル技術の活用として、遠隔診療やAIを用いた説明の補助、ロボット支援手術下での口腔管理なども評価の対象となりつつある 48。 これらの制度変更は、本分析で明らかになった地域格差を是正するインセンティブとなり得るが、現場での実装には「人材育成」という時間のかかるプロセスが不可欠である。特に、LLクラスター地域においては、ICTを活用した遠隔相談システムや、拠点病院の歯科医師が開業医を巡回指導するような「地域完結型」の教育モデルが求められる 38。
+結論と政策的提言
+本研究の生態学的分析および広範な文献検討により、日本における周術期口腔機能管理の実施には、がん手術需要とは無関係な顕著な地域格差が存在することが明らかになった。空間的なクラスタリングと供給側の要因分析から得られた結論は以下の通りである。
+格差の主因は供給側の構造的欠陥にある： 都道府県間の実施密度の差は、がん手術のニーズよりも、病院歯科の設置率や地域連携パスの成熟度によって規定されている 7。
+空間的波及効果の活用： HHクラスター（岡山・兵庫・佐賀）に見られるような成功モデルのスピルオーバー効果は、隣接県へと波及する性質を持つ。これを全国に拡大するためには、広域的な大学病院ネットワークを通じた技術移転が有効である 19。
+周辺地域への重点的介入： LLクラスター（北海道・岩手・沖縄）における実施率向上のためには、単なる点数引き上げではなく、病院歯科の設置支援や、移動歯科診療車の活用、看護師への専門教育といった多角的なアプローチが必要である 30。
+アクセシビリティと経済的障壁の除去： 地方における物理的な距離の制約を克服するため、2024年度改定で推進されている遠隔歯科相談などのデジタルトランスフォーメーション（DX）を加速させるべきである 48。
+周術期口腔機能管理は、日本の超高齢社会における外科医療の安全性を担保する「公衆衛生的なインフラ」である。このインフラが居住地域によって左右される現状は、ユニバーサル・ヘルス・カバレッジを標榜する日本にとって解決すべき重要な課題である。NDBデータの継続的なモニタリングを通じ、エビデンスに基づいた資源配分と政策立案を行うことが、国民全体の健康アウトカムの向上に繋がるものと確信する。
+引用文献
+Dental Utilization Stratified by the Purpose of Visit: A Population-Based Study in Japan, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC10658419/
+Effect of perioperative oral care on postoperative infections in patients with cancer - Ovid, 4月 10, 2026にアクセス、 https://www.ovid.com/journals/jjnsc/fulltext/10.1111/jjns.12600~effect-of-perioperative-oral-care-on-postoperative
+Effect of perioperative oral management on the prevention of surgical site infection after colorectal cancer surgery - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC6200490/
+Preventive Effects of Sustainable and Developmental Perioperative Oral Management Using the “Oral Triage” System on Postoperative Pneumonia after Cancer Surgery - MDPI, 4月 10, 2026にアクセス、 https://www.mdpi.com/1660-4601/18/12/6296
+Cost-Effectiveness Analysis of Perioperative Oral Management after Cancer Surgery and an Examination of the Reduction in Medical Costs Thereafter: A Multicenter Study - MDPI, 4月 10, 2026にアクセス、 https://www.mdpi.com/1660-4601/18/14/7453
+The effects of perioperative oral management on perioperative serum albumin levels in patients treated surgically under general anesthesia - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC7969246/
+Nation-Wide Assessment of the Provision of Oral Care in Japan Using the Nati - Semantic Scholar, 4月 10, 2026にアクセス、 https://pdfs.semanticscholar.org/56db/80a07a777dec8a1c67a049a3dcfd32baa34e.pdf
+歯科におけるレセプト情報・特定健診等情報データベース（NDB）を用いた 研究に関する系統的, 4月 10, 2026にアクセス、 https://mhlw-grants.niph.go.jp/system/files/report_pdf/202222037A-buntan1.pdf
+Characteristics of Hospitals Employing Dentists, and Utilization of Dental Care Services for Hospitalized Patients in Japan: A Nationwide Cross-Sectional Study - MDPI, 4月 10, 2026にアクセス、 https://www.mdpi.com/1660-4601/19/11/6448
+Effect of perioperative oral care on prevention of postoperative pneumonia associated with esophageal cancer surgery: A multicenter case-control study with propensity score matching analysis - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/28816937/
+Preventive Effects of Sustainable and Developmental Perioperative Oral Management Using the “Oral Triage” System on Postoperative Pneumonia after Cancer Surgery - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC8296101/
+Effects of perioperative oral care on prevention of postoperative pneumonia after lung resection: Multicenter retrospective study with propensity score matching analysis - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/30765141/
+Positive impact of perioperative oral management on the risk of surgical site infections after abdominal surgery: Sixteen universities in Japan - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/37713859/
+Perioperative oral care can prevent surgical site infection after colorectal cancer surgery, 4月 10, 2026にアクセス、 https://u-toyama.elsevierpure.com/en/publications/perioperative-oral-care-can-prevent-surgical-site-infection-after
+Positive impact of perioperative oral management on the risk of surgical site infections after abdominal surgery: Sixteen universities in Japan - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC10508462/
+(PDF) From Insurance Records to Epidemiology: Provenance and Processing of Japanese Claims Data - ResearchGate, 4月 10, 2026にアクセス、 https://www.researchgate.net/publication/400043357_From_Insurance_Records_to_Epidemiology_Provenance_and_Processing_of_Japanese_Claims_Data
+A Review of Studies Using Japanese Nationwide Administrative Claims Databases - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC10944998/
+National trends in dental sedation and general anesthesia in Japan before and during the COVID-19 pandemic - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC12687997/
+Manuscript_perioperative_oral_care.docx
+Trends in dental expenditures in Japan with a universal health insurance system - Research journals - PLOS, 4月 10, 2026にアクセス、 https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0292547&type=printable
+Are Public Oral Care Services Evenly Distributed?—Nation-Wide Assessment of the Provision of Oral Care in Japan Using the National Database of Health Insurance Claims - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC8536066/
+Geographic access to radiotherapy facilities in Japan | Journal of Radiation Research | Oxford Academic, 4月 10, 2026にアクセス、 https://academic.oup.com/jrr/article/67/2/259/8499499
+Are Public Oral Care Services Evenly Distributed?-Nation-Wide Assessment of the Provision of Oral Care in Japan Using the National Database of Health Insurance Claims - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/34682591/
+Current State and Challenges of Dental Intervention in Aspiration Pneumonia Management from the Perspective of Hospitalists: A Cross-Sectional Survey in Japan - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC12619599/
+Geographic variation in inpatient medical expenditure among older adults aged 75 years and above in Japan: a three-level multilevel analysis of nationwide data - Frontiers, 4月 10, 2026にアクセス、 https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1306013/full
+Distribution of dentists in the Greater Tokyo Area, Japan - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC9379024/
+Department of Preventive Dentistry | OKAYAMA UNIV. HOSPITAL, 4月 10, 2026にアクセス、 https://www.okayama-u.ac.jp/user/hospital/en/index159.html
+[PERIOPERATIVE TEAM COOPERATION IN OKAYAMA UNIVERSITY HOSPITAL] - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/30183175/
+Perioperative Management Center（PERIO） | OKAYAMA UNIV. HOSPITAL, 4月 10, 2026にアクセス、 https://www.okayama-u.ac.jp/user/hospital/en/index180.html
+Regional Disparities in Home-Based Medical Care Utilization in Japan: Ecological Study of Nationwide Claim Data - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/41168565/
+Analyzing Disparity in Geographical Accessibility to Home Medical Care Using a Claims Database and Geographical Information System: Simulation Study - JMIR Aging, 4月 10, 2026にアクセス、 https://aging.jmir.org/2025/1/e70040
+Change in Geographic Accessibility to Dental Clinics Affects Access to Care - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC10286177/
+Characteristics of Hospitals Employing Dentists, and Utilization of Dental Care Services for Hospitalized Patients in Japan: A Nationwide Cross-Sectional Study - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC9180561/
+(PDF) Current State and Challenges of Dental Intervention in Aspiration Pneumonia Management from the Perspective of Hospitalists: A Cross-Sectional Survey in Japan - ResearchGate, 4月 10, 2026にアクセス、 https://www.researchgate.net/publication/397465761_Current_State_and_Challenges_of_Dental_Intervention_in_Aspiration_Pneumonia_Management_from_the_Perspective_of_Hospitalists_A_Cross-Sectional_Survey_in_Japan
+周術期等口腔機能管理における 医科歯科連携のための手引き - 山梨県, 4月 10, 2026にアクセス、 https://www.pref.yamanashi.jp/documents/35013/7qkq0k_syuujyutukisassi1.pdf
+医科歯科連携による周術期等口腔機能管理の成果, 4月 10, 2026にアクセス、 https://redcross.repo.nii.ac.jp/record/18605/files/jrcsh4201_38-41.pdf
+[Medical-Dental Collaboration for Oral Supportive Care of Cancer Patients] - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/34139720/
+The Oral Healthcare System in Japan, 4月 10, 2026にアクセス、 https://www.mhlw.go.jp/content/000714579.pdf
+Dental Hygienists' Practice in Perioperative Oral Care Management According to the Japanese Dental Hygienists Survey 2019 - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/33375276/
+Dental Hygienists' Practice in Perioperative Oral Care Management According to the Japanese Dental Hygienists Survey 2019 - ResearchGate, 4月 10, 2026にアクセス、 https://www.researchgate.net/publication/348016738_Dental_Hygienists'_Practice_in_Perioperative_Oral_Care_Management_According_to_the_Japanese_Dental_Hygienists_Survey_2019
+Factor analysis on oral health care for acute hospitalized patients in Japan - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/21592269/
+Oral Care Awareness and Factors Related to the Burden of Nurses at a Community Hospital in Japan - MDPI, 4月 10, 2026にアクセス、 https://www.mdpi.com/2227-9032/10/6/1073
+Survey on status of oral care practices and factors associated with confidence in oral care skills in ward nurses at an acute hospital in Japan - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC12977401/
+Integrating Oral Health Educators into Hospital Care | ADHA, 4月 10, 2026にアクセス、 https://www.adha.org/wp-content/uploads/2025/12/Integrating_Oral_Health_Educators_into_Hospital_Care_2025_A_White_Paper_for_Improved_Outcomes_by_NNHH.pdf
+Urban-rural differences in the prevalence of having a family dentist and their association with income inequality among Japanese, 4月 10, 2026にアクセス、 https://d-nb.info/1342327640/34
+Regional Inequality in Dental Care Utilization in Japan: An Ecological Study Using the National Database of Health Insurance Claims - PubMed, 4月 10, 2026にアクセス、 https://pubmed.ncbi.nlm.nih.gov/34527966/
+Regional Inequality in Dental Care Utilization in Japan: An Ecological Study Using the National Database of Health Insurance Claims - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC8356097/
+Japan health panel adopts medical fee changes to raise wages and cope with inflation, 4月 10, 2026にアクセス、 https://www.japantimes.co.jp/news/2026/02/13/japan/science-health/national-medical-fee-change/
+Trends in dental expenditures in Japan with a universal health insurance system - PMC, 4月 10, 2026にアクセス、 https://pmc.ncbi.nlm.nih.gov/articles/PMC10553203/
+Japan's FY 2024 pricing reform expected to favour new listed innovative drugs, 4月 10, 2026にアクセス、 https://www.pharmaceutical-technology.com/analyst-comment/japan-fy-2024-pricing-reform-expected-to-favour-new-listed-innovative-drugs/
+Trends in dental expenditures in Japan with a universal health insurance system | PLOS One - Research journals, 4月 10, 2026にアクセス、 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292547
+(PDF) Evolving Trends in Dental Services in Aging Japan: An Age–Period–Cohort Analysis Using Nationwide Data from Fiscal Years 2016 to 2023 - ResearchGate, 4月 10, 2026にアクセス、 https://www.researchgate.net/publication/400681024_Evolving_Trends_in_Dental_Services_in_Aging_Japan_An_Age-Period-Cohort_Analysis_Using_Nationwide_Data_from_Fiscal_Years_2016_to_2023

@@ -1,0 +1,110 @@
+# ============================================================================
+# プロジェクト設定: NDB_XXX_perioperative_oral_care
+# ============================================================================
+
+project_name: "Perioperative_Oral_Care_Regional_Analysis"
+analysis_year: "2023"
+
+analysis_parameters:
+  masking_strategy: "conservative"  # conservative=0, moderate=5
+  # 新指標（人口10万人ベース）
+  # dental_mgmt_rate = B001-2/3 算定回数 / 都道府県人口 × 100,000
+  # cancer_surgery_rate = 16種がん手術算定回数 / 都道府県人口 × 100,000
+  primary_outcome: "dental_mgmt_rate"
+  per_population: 100000
+
+# 医科診療行為（手術）
+medical_surgery:
+  # 分類コード列の直後に続く「継続行」（分類コードが空）を同一ブロックに合算する
+  aggregate_classification_subrows: true
+  sheet_name: "入院"
+  target_surgery_codes:
+    - code: "K463"
+      name: "甲状腺悪性腫瘍手術"
+    - code: "K511"
+      name: "肺切除術"
+    - code: "K513"
+      name: "胸腔鏡下肺切除術"
+    - code: "K514-2"
+      name: "胸腔鏡下肺悪性腫瘍手術"
+    - code: "K529-2"
+      name: "胸腔鏡下食道悪性腫瘍手術"
+    - code: "K655"
+      name: "胃切除術"
+    - code: "K655-2"
+      name: "腹腔鏡下胃切除術"
+    - code: "K695"
+      name: "肝切除術"
+    - code: "K695-2"
+      name: "腹腔鏡下肝切除術"
+    - code: "K719"
+      name: "結腸切除術"
+    - code: "K719-2"
+      name: "腹腔鏡下結腸切除術"
+    - code: "K719-3"
+      name: "腹腔鏡下結腸悪性腫瘍切除術"
+    - code: "K721-4"
+      name: "早期悪性腫瘍大腸粘膜下層剥離術"
+    - code: "K740"
+      name: "直腸切除・切断術"
+    - code: "K740-2"
+      name: "腹腔鏡下直腸切除・切断術"
+    - code: "K773-2"
+      name: "腹腔鏡下腎（尿管）悪性腫瘍手術"
+  data_path: "02_Data/raw/NDB_OpenData/No.10/01_医科診療行為（算定回数）/01_公費レセプトを含まないデータ/K_手術/款別都道府県別算定回数.xlsx"
+
+# 歯科診療行為（周術期口腔機能管理）
+dental_management:
+  aggregate_classification_subrows: true
+  target_codes:
+    - code: "B001-2"
+      name: "周術期等口腔機能管理料（Ⅰ）"
+    - code: "B001-3"
+      name: "周術期等口腔機能管理料（Ⅱ）"
+  data_path: "02_Data/raw/NDB_OpenData/No.10/02_歯科診療行為（算定回数）/01_公費レセプトを含まないデータ/B_医学管理等/都道府県別算定回数.xlsx"
+
+input_paths:
+  prefecture_codes: "02_Data/master/jis_codes/prefecture_codes.csv"
+  spatial_geojson: "02_Data/raw/GIS/japan.geojson"
+
+external_statistics:
+  # 歯科医師密度（08_dentist_data.py で取得・計算）
+  dentist_statistics:
+    source: "estat_api"
+    stat_id: "0000020209"    # 社会・人口統計体系 都道府県別
+    indicator: "I6200"       # 医療施設に従事する歯科医師数
+    year: 2022               # 令和4年（医師・歯科医師・薬剤師調査、2年ごと実施）
+    path: "02_Data/master/dentist_statistics_2022.csv"
+
+  # SharedWorkspace 流用（既存プロジェクトの整備済みデータ）
+  dental_systemic_population:
+    path: "projects/NDB_XXX_dental_systemic/02_Data/interim/dental_disease_prefecture.csv"
+    prefecture_col: "prefecture"
+    use_cols: ["prefecture", "population"]
+  dental_systemic_covariates:
+    path: "projects/NDB_XXX_dental_systemic/02_Data/interim/analysis_dataset_v2.csv"
+    prefecture_col: "prefecture"
+    use_cols: ["prefecture", "aging_rate", "income_per_capita", "pop_density"]
+  temperature_covariates:
+    path: "projects/NDB_XXX_temperature_emergency/data/interim/03_covariates.csv"
+    prefecture_col: "prefecture"
+    use_cols: ["prefecture", "pop_density", "physicians_per_100k"]
+
+output_paths:
+  interim: "02_Data/interim"
+  results: "03_Analysis/results"
+  # 原稿（04_Manuscripts）の図リンクは ../results/figures/（hba1c_complications 等と同様）
+  figures: "results/figures"
+  tables: "03_Analysis/results/tables"
+  files:
+    medical_surgery: "perioperative_medical_surgery.csv"
+    dental_management: "perioperative_dental_management.csv"
+    implementation_rate: "implementation_rate_by_prefecture.csv"
+    analysis_dataset: "analysis_dataset.csv"
+
+visualization:
+  dpi: 300
+  choropleth:
+    colormap: "RdYlGn"
+    bins: [0, 5, 10, 20, 30, 40, 100]
+
