@@ -1,3 +1,5 @@
+﻿> **正本リポジトリ（GitHub Private）：** https://github.com/haruki00430/NDB_XXX_perioperative_oral_care
+
 # NDB_XXX_perioperative_oral_care
 
 ## ステータス（2026-04-08 更新）
