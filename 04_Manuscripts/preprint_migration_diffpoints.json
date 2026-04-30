@@ -1,0 +1,13 @@
+{
+  "project_name": "NDB_XXX_perioperative_oral_care",
+  "manuscript_file": "C:\\Users\\user\\SharedWorkspace\\projects\\NDB_Research_Hub\\projects\\NDB_XXX_perioperative_oral_care\\04_Manuscripts\\Manuscript_perioperative_oral_care.qmd",
+  "title": "Dental Workforce Supply Rather Than Surgical Demand Drives Regional Disparities in Perioperative Oral Care: A Prefectural Ecological Analysis Using Japanese NDB Open Data",
+  "has_author_block": true,
+  "has_date": true,
+  "bibliography_value": "../references.bib",
+  "csl_value": "../vancouver.csl",
+  "has_format_block": true,
+  "has_keywords_line": true,
+  "needs_bibliography_path_fix": false,
+  "needs_csl_path_fix": false
+}

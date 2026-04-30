@@ -1,0 +1,17 @@
+---
+title: "Dental Workforce Supply Rather Than Surgical Demand Drives Regional Disparities in Perioperative Oral Care: A Prefectural Ecological Analysis Using Japanese NDB Open Data"
+format:
+  docx:
+    toc: false
+    number-sections: false
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+bibliography: ../references.bib
+csl: ../vancouver.csl
+---
+
+{{< include ../core/manuscript_core.qmd >}}
+
+{{< include ../includes/submission_journal_notes.qmd >}}
