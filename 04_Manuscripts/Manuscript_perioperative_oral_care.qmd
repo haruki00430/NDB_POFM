@@ -14,8 +14,8 @@ format:
     embed-resources: true
   docx:
     number-sections: true
-bibliography: references.bib
-csl: vancouver.csl
+bibliography: ../references.bib
+csl: ../vancouver.csl
 lang: en
 ---
 
@@ -30,6 +30,9 @@ lang: en
 **Conclusions**: Prefectural POFM density was strongly correlated with dental workforce supply (r = 0.617, p < 0.0001) but not with cancer surgical demand, and exhibited significant spatial clustering (Moran's I = 0.210, p = 0.024). These findings suggest that supply-side factors — particularly dental workforce capacity — rather than patient need, primarily drive geographic inequity in perioperative oral care provision in Japan.
 
 **Keywords**: perioperative oral care; regional disparities; NDB Open Data; ecological study; spatial autocorrelation; Japan
+
+
+**Keywords:** perioperative oral care; ecological study; Japan; health insurance claims
 
 ---
 
