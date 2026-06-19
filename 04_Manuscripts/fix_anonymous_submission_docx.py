@@ -52,7 +52,7 @@ def _replace_paragraph_text(par, new_text: str) -> None:
 
 
 def main() -> None:
-    doc = Document(INPUT)
+    doc = Document(str(INPUT))
     changed: list[str] = []
 
     for par in doc.paragraphs:
@@ -87,7 +87,7 @@ def main() -> None:
             _replace_paragraph_text(par, DATA_AVAIL_BLINDED)
             changed.append("Data Availability blinded (Zenodo only)")
 
-    doc.save(OUTPUT)
+    doc.save(str(OUTPUT))
     print(f"Saved: {OUTPUT}")
     for item in dict.fromkeys(changed):
         print(f"  - {item}")

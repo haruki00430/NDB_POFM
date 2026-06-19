@@ -88,3 +88,8 @@ data/temp/**/*.xml
 04_Manuscripts/Guide for authors*.pdf
 04_Manuscripts/* - *.docx
 04_Manuscripts/*コピー*.docx
+
+# ----------------------------------------------------------------
+# Editorial Manager 投稿パッケージ（ローカル専用・再生成可）
+# ----------------------------------------------------------------
+04_Manuscripts/submission_package/

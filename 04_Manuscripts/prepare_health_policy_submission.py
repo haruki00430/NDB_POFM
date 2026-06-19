@@ -55,6 +55,13 @@ def find_in_body(pattern):
             return e
     return None
 
+def require_in_body(pattern):
+    """Return a body paragraph element or raise if the pattern is missing."""
+    elem = find_in_body(pattern)
+    if elem is None:
+        raise RuntimeError(f"Required section not found: {pattern}")
+    return elem
+
 def get_paras():
     return doc.paragraphs
 
@@ -93,7 +100,7 @@ for run in p.runs:
 print('3. Date removed')
 
 # ── 4. HIGHLIGHTS (inserted before "1. Abstract") ────────────────────────────
-abstract_heading = find_in_body(r'^1\.\s+Abstract$')
+abstract_heading = require_in_body(r'^1\.\s+Abstract$')
 highlights = [
     (True,  'Highlights'),
     (False, '• POFM delivery varied 2.25-fold across 47 Japanese prefectures'),
@@ -112,7 +119,7 @@ for bold, text in reversed(highlights):
 print('4. Highlights added')
 
 # ── 5. ABSTRACT: add Objectives ───────────────────────────────────────────────
-bg_elem = find_in_body(r'^Background:')
+bg_elem = require_in_body(r'^Background:')
 obj_text = (
     'Objectives: To characterize prefectural variation in perioperative oral functional management '
     '(POFM) delivery across Japan, examine whether this variation was associated with cancer surgical '
@@ -122,7 +129,7 @@ bg_elem.addnext(new_para(obj_text))
 print('5. Abstract Objectives added')
 
 # ── 6. RESEARCH IN CONTEXT (inserted before "2. Introduction") ───────────────
-intro_elem = find_in_body(r'^2\.\s+Introduction$')
+intro_elem = require_in_body(r'^2\.\s+Introduction$')
 ric = [
     (False, ''),
     (True,  'Research in Context'),
