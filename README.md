@@ -159,9 +159,9 @@ If you use this code, please cite the associated manuscript and code repository:
 > *When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan.* *(In submission, Health Policy, 2026)*
 
 **Code repository**:
-> Analysis code for "When Universal Coverage Meets Local Capacity" [Software]. Zenodo. 2026. https://doi.org/10.5281/zenodo.20756030
+> Analysis code for "When Universal Coverage Meets Local Capacity" [Software]. Zenodo. 2026. https://doi.org/10.5281/zenodo.20756258
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20756030.svg)](https://doi.org/10.5281/zenodo.20756030)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20756258.svg)](https://doi.org/10.5281/zenodo.20756258)
 
 ---
 

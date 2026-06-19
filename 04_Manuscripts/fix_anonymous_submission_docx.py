@@ -31,7 +31,7 @@ DATA_AVAIL_BLINDED = (
     "Ministry of Health, Labour and Welfare of Japan "
     "(https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). "
     "Analysis code is archived on Zenodo "
-    "(https://doi.org/10.5281/zenodo.20756030). "
+    "(https://doi.org/10.5281/zenodo.20756258). "
     "A public GitHub repository link will be provided upon acceptance."
 )
 
