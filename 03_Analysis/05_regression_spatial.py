@@ -24,8 +24,6 @@ LM 検定、空間ラグモデル（SLM）を実行する。
 """
 from __future__ import annotations
 
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -105,7 +103,6 @@ def _run_lm_and_slm(df, gdf, w, x_adj, avail_covars, results_dir, logger) -> Non
 
         # 空間重み行列を有効行に合わせて再構築
         # （元の gdf からサブセットした行に対応する新しい Queen 重み行列）
-        import geopandas as gpd
         gdf_sub = gdf.loc[sub.index].copy().reset_index(drop=True)
         from libpysal.weights import Queen
         w_sub = Queen.from_dataframe(gdf_sub, use_index=False)
@@ -184,7 +181,6 @@ def _run_lm_and_slm(df, gdf, w, x_adj, avail_covars, results_dir, logger) -> Non
             rho_val = float(sp_model.rho)
             model_label = "SLM (Spatial Lag Model)"
         else:
-            from spreg import ML_Error
             sp_model = ML_Error(y_arr, X_arr, w=w_sub, name_y=Y_COL, name_x=x_adj)
             rho_val = float(sp_model.lam)
             model_label = "SEM (Spatial Error Model)"

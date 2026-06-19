@@ -62,3 +62,26 @@ data/raw/MLIT_N03/
 **/MLIT_N03/
 data/raw/**/*.xml
 data/temp/**/*.xml
+
+# ----------------------------------------------------------------
+# Double-anonymized peer review (Health Policy): local only until acceptance
+# CRediT / author contact → title page; not in public repo during review
+# ----------------------------------------------------------------
+04_Manuscripts/10b_TitlePage_health_policy.docx
+04_Manuscripts/cover_letter_health_policy.md
+04_Manuscripts/create_title_page.py
+04_Manuscripts/update_title_page.py
+04_Manuscripts/Manuscript_perioperative_oral_care.qmd
+04_Manuscripts/Manuscript_perioperative_oral_care.docx
+04_Manuscripts/Manuscript_perioperative_oral_care.html
+
+# ----------------------------------------------------------------
+# Internal drafts, supervisor versions, working notes (not for public repo)
+# ----------------------------------------------------------------
+04_Manuscripts/09Manuscript_*.docx
+04_Manuscripts/When_Universal_Coverage_*.docx
+04_Manuscripts/When_Universal_Coverage_*.pdf
+04_Manuscripts/GPT-*.txt
+04_Manuscripts/Guide for authors*.pdf
+04_Manuscripts/* - *.docx
+04_Manuscripts/*コピー*.docx

@@ -1,0 +1,10 @@
+[flake8]
+max-line-length = 88
+extend-ignore = E203, W503, E501
+per-file-ignores =
+    03_Analysis/04_descriptive_stats.py:E402
+    03_Analysis/05_regression_spatial.py:E221
+    03_Analysis/06_visualization.py:E402,E221
+    03_Analysis/07_power_analysis.py:E221,E127
+    04_Manuscripts/prepare_health_policy_submission.py:E302,E305,E221
+    04_Manuscripts/create_title_page.py:E302,E305

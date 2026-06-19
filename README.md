@@ -20,7 +20,7 @@ This repository contains analysis code for a nationwide prefectural ecological s
 
 **Study design**: Cross-sectional ecological study | N = 47 prefectures | Fiscal Year 2023
 
-**Manuscript**: Saito H, Ohira T. When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan. *(In submission, Health Policy, 2026)*
+**Manuscript**: *When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan.* *(In submission, Health Policy, 2026; authors anonymized during peer review)*
 
 ### 日本語
 
@@ -81,7 +81,7 @@ NDB_POFM/
 ├── results/
 │   └── figures/                            # Manuscript-linked figures / 原稿用図
 └── 04_Manuscripts/
-    ├── Manuscript_perioperative_oral_care.qmd
+    ├── 10Manuscript_health_policy_submission_v1_anonymous.docx
     ├── references.bib
     └── vancouver.csl
 ```
@@ -155,11 +155,11 @@ python 03_Analysis/07_power_analysis.py
 If you use this code, please cite the associated manuscript and code repository:  
 本コードを使用する場合は、論文とコードリポジトリの両方を引用してください：
 
-**Manuscript**:
-> Saito H, Ohira T. When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan. *(In submission, Health Policy, 2026)*
+**Manuscript** (citation updated upon acceptance):
+> *When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan.* *(In submission, Health Policy, 2026)*
 
 **Code repository**:
-> Saito H. Analysis code for "When Universal Coverage Meets Local Capacity" [Software]. Zenodo. 2026. https://doi.org/10.5281/zenodo.20756030
+> Analysis code for "When Universal Coverage Meets Local Capacity" [Software]. Zenodo. 2026. https://doi.org/10.5281/zenodo.20756030
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20756030.svg)](https://doi.org/10.5281/zenodo.20756030)
 

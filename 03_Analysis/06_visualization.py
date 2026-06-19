@@ -205,7 +205,7 @@ def lisa_cluster_map(gdf_full: gpd.GeoDataFrame, col: str, out: Path) -> None:
         ax.legend(handles=patches, loc="lower left", fontsize=9, title="LISA Cluster (p<0.05)")
         ax.set_title(
             "LISA cluster map: perioperative oral management (POFM) density\n"
-            f"(Global Moran's I = 0.210, p = 0.024; 999 permutations)",
+            "(Global Moran's I = 0.210, p = 0.024; 999 permutations)",
             fontsize=12,
             pad=10,
         )

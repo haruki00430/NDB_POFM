@@ -21,7 +21,6 @@ interim へ保存する。分類コード列を用い、空の継続行は前方
 """
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Dict, Hashable
 
 import pandas as pd
@@ -155,4 +154,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
