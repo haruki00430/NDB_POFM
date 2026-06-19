@@ -1,0 +1,29 @@
+# Requirements for:
+# "When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis
+#  of Perioperative Oral Care in Japan"
+# Saito H, Ohira T (2026) — Health Policy submission
+#
+# Install: pip install -r requirements.txt
+# Python >= 3.10 required
+
+# Core data science
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Visualisation
+matplotlib>=3.8.0
+
+# Statistics
+scipy>=1.11.0
+statsmodels>=0.14.0
+
+# Spatial analysis
+geopandas>=0.14.0
+libpysal>=4.9.0
+esda>=2.5.0
+spreg>=1.5.0
+
+# Data I/O
+openpyxl>=3.1.0
+pyyaml>=6.0.1
+requests>=2.31.0

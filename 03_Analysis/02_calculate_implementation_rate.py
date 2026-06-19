@@ -1,5 +1,20 @@
 """
-Phase 2: 周術期口腔ケア実施率の計算
+Script 02: Merge medical and dental claim counts by prefecture
+
+Merges Phase 1 outputs and computes raw implementation ratios
+(dental management claims / major cancer surgery claims).
+
+Population-adjusted rates (per 100,000) are computed in script 03.
+
+Output:
+  03_Analysis/results/implementation_rate_by_prefecture.csv
+
+---
+
+スクリプト 02: 算定回数の都道府県別統合
+
+医科・歯科の算定回数を結合し、実施率（生の比率）を算出する。
+人口10万人あたり指標はスクリプト 03 で計算する。
 """
 from __future__ import annotations
 

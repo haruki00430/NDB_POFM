@@ -1,16 +1,21 @@
 """
-Phase 3: 外部統計の統合・人口補正率の計算
+Script 03: Integrate external covariates and compute per-100,000 rates
 
-【指標設計】
-  dental_mgmt_rate    = B001-2/3 算定回数 / 人口 × 100,000  [主要アウトカム]
-  cancer_surgery_rate = 16種がん手術算定回数 / 人口 × 100,000  [曝露/共変量]
+Primary outcome: dental_mgmt_rate (B001-2/3 claims per 100,000 population)
+Exposure: cancer_surgery_rate (16 cancer surgery K-codes per 100,000)
 
-【共変量（SharedWorkspace 流用）】
-  population      : NDB_XXX_dental_systemic/dental_disease_prefecture.csv
-  aging_rate      : NDB_XXX_dental_systemic/analysis_dataset_v2.csv
-  income_per_capita: 同上
-  pop_density     : NDB_XXX_temperature_emergency/03_covariates.csv
-  physicians_per_100k: 同上（感度分析用）
+Covariates: aging rate, per-capita income, population density,
+physicians per 100,000 (sensitivity), dentists per 100,000 (from script 08).
+
+Output:
+  02_Data/interim/analysis_dataset.csv
+
+---
+
+スクリプト 03: 外部統計の統合・人口補正率の計算
+
+主要アウトカム dental_mgmt_rate、曝露 cancer_surgery_rate を算出し、
+共変量を統合して解析用データセットを作成する。
 """
 from __future__ import annotations
 

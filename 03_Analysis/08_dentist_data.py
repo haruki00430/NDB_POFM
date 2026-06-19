@@ -1,23 +1,21 @@
 """
-Phase 8: 歯科医師密度データの取得・処理
+Script 08: Download and process dentist density by prefecture
 
-【データソース】
-  e-Stat 医師・歯科医師・薬剤師統計 令和4年（2022年）
-  表3: 人口10万対歯科医師数，主たる従業地による都道府県別、主たる業務の種別
-  stat_infid: 000040155767
-  ダウンロードURL: https://www.e-stat.go.jp/stat-search/file-download?statInfId=000040155767&fileKind=1
+Data source: e-Stat Survey of Physicians, Dentists and Pharmacists,
+Reiwa 4 (2022) — dentists per 100,000 population in medical facilities.
 
-  ※ 医師・歯科医師・薬剤師調査は2年おきに実施。NDB FY2023 の解析に対し、
-    最近傍である令和4年（2022年）データを使用する。
+Direct download (no API key required). Parses Shift-JIS CSV and exports
+prefecture-level dentist density for integration in script 03.
 
-【CSV 構造（確認済み）】
-  エンコーディング: cp932 (Shift-JIS)
-  都道府県行: col[0] が "01北海道" のように2桁数字+県名で始まる
-  対象列: col[4] = 「医療施設従事者」の人口10万対歯科医師数
-
-【出力】
+Output:
   02_Data/master/dentist_statistics_2022.csv
-  列: pref_code (str, 2桁ゼロパディング), dentists_per_100k (float)
+
+---
+
+スクリプト 08: 歯科医師密度データの取得・処理
+
+e-Stat 医師・歯科医師・薬剤師統計（令和 4 年）から都道府県別
+歯科医師密度を取得し、マスター CSV として保存する。
 """
 from __future__ import annotations
 

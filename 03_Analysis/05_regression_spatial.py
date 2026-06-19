@@ -1,19 +1,26 @@
 """
-Phase 5: 回帰・空間統計（改訂版 v2 - SLM追加）
+Script 05: OLS regression, sensitivity analysis, and spatial statistics
 
-【分析設計】
-  Y（アウトカム）   : dental_mgmt_rate（B001-2/3 算定回数/人口10万人）
-  X1（主要曝露）    : cancer_surgery_rate（がん手術算定回数/人口10万人）
-  共変量            : aging_rate, income_per_capita, pop_density
-  感度分析          : 6仕様（Baseline / HC3 / 外れ値除外 / 大都市除外 / 対数変換 / 追加共変量）
-  空間統計          : Global Moran's I → LM検定 → SLM/SEM選択
+Outcome (Y): dental_mgmt_rate (POFM claims per 100,000)
+Exposure (X): cancer_surgery_rate (major cancer surgery per 100,000)
+Covariates: aging_rate, income_per_capita, pop_density
 
-【出力ファイル】
-  regression_results.csv   : 主モデル結果（Model 1 Unadjusted / Model 2 Adjusted）
-  sensitivity_results.csv  : 感度分析6仕様
-  morans_i_results.txt     : Moran's I 空間自己相関検定
-  lm_test_results.csv      : LagrangeMultiplier検定（SLM vs SEM選択）
-  slm_results.csv          : Spatial Lag Model 結果
+Analyses:
+  - Model 1 (unadjusted) and Model 2 (adjusted) OLS with HC3 SE
+  - Seven sensitivity specifications (baseline, HC3, outliers, metros,
+    log-transform, physicians, dentists)
+  - Global Moran's I, Lagrange Multiplier tests, Spatial Lag Model (SLM)
+
+Outputs:
+  regression_results.csv, sensitivity_results.csv, morans_i_results.txt,
+  lm_test_results.csv, slm_results.csv, correlation_matrix.csv
+
+---
+
+スクリプト 05: 回帰・感度分析・空間統計
+
+OLS 回帰（主モデル・感度分析 7 仕様）、Global Moran's I、
+LM 検定、空間ラグモデル（SLM）を実行する。
 """
 from __future__ import annotations
 

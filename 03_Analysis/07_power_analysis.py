@@ -1,16 +1,18 @@
 """
-Phase 7: 事後検定力分析（Post-hoc Power Analysis）
+Script 07: Post-hoc statistical power analysis
 
-【目的】
-  N=47 という小サンプルでの統計的検定力を定量化し、
-  Manuscript の Limitations に記載する数値を算出する。
+Quantifies statistical power for OLS models with N = 47 prefectures
+using the non-central F distribution. Effect size: Cohen's f² = R² / (1 − R²).
 
-【手法】
-  非心 F 分布 (scipy.stats.ncf) を用いた OLS 線形回帰の検定力計算
-  Effect size: Cohen's f² = R² / (1 - R²)
+Output:
+  03_Analysis/results/power_analysis_results.txt
 
-【出力ファイル】
-  results/power_analysis_results.txt : 検定力分析レポート（Manuscript 引用用数値）
+---
+
+スクリプト 07: 事後検定力分析
+
+N=47 の生態学的単位における OLS モデルの検定力を非心 F 分布で算出し、
+論文 Limitations 用の数値を出力する。
 """
 from __future__ import annotations
 

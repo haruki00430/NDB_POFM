@@ -1,11 +1,23 @@
 """
-Phase 1: NDBデータ抽出
+Script 01: NDB data extraction for perioperative oral care analysis
 
-医科手術（Kコード）と歯科管理料（B001-2/3）を都道府県別に抽出し、
-プロジェクト配下の interim へ保存する。
+Extracts prefecture-level claim counts for major cancer surgery (16 K-codes)
+and perioperative oral management fees (B001-2, B001-3) from NDB Open Data
+No.10 Excel files and saves interim CSVs.
 
-分類コード列は「診療行為コード」（数値ID）列と取り違えないよう明示的に選択する。
-分類コードが空の継続行は、設定に従い前方埋めして同一ブロックに含めて合算する。
+Uses the classification-code column (not the numeric procedure ID column).
+Empty continuation rows are forward-filled and aggregated per config.
+
+Outputs:
+  02_Data/interim/perioperative_medical_surgery.csv
+  02_Data/interim/perioperative_dental_management.csv
+
+---
+
+スクリプト 01: NDB データ抽出（周術期口腔ケア解析）
+
+医科手術（K コード）と歯科管理料（B001-2/3）を都道府県別に抽出し、
+interim へ保存する。分類コード列を用い、空の継続行は前方埋めして合算する。
 """
 from __future__ import annotations
 

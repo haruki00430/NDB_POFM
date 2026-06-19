@@ -1,87 +1,177 @@
-﻿> **正本リポジトリ（GitHub Private）：** https://github.com/haruki00430/NDB_XXX_perioperative_oral_care
+﻿# When Universal Coverage Meets Local Capacity
+**A Prefectural Ecological Analysis of Perioperative Oral Care in Japan**
 
-# NDB_XXX_perioperative_oral_care
+**皆保険と地域能力の交差点：日本における周術期口腔ケアの都道府県生態学研究**
 
-## ステータス（2026-04-08 更新）
+---
 
-- 原稿: これから作成（`04_Manuscripts/Manuscript_perioperative_oral_care.qmd`）
-- 実装計画の正本: `00_Docs/02_Implementation/implementation_plan_NDB_XXX_perioperative_oral_care.md`
-- `projects/NDB_XXX_perioperative_oral_care/00_Docs/implementation_plan.md` は要約メモとして扱う
+## Overview / 概要
 
-## テーマ
+### English
 
-癌周術期における医科歯科連携（周術期口腔機能管理）の地域格差を都道府県単位で定量化する。
+This repository contains analysis code for a nationwide prefectural ecological study examining regional variation in **perioperative oral functional management (POFM)** across Japan's 47 prefectures using NDB Open Data (fiscal year 2023).
 
-## 指標定義（現行）
+**Key findings**:
 
-- 分母: `medical_surgery.target_surgery_codes` の都道府県別算定回数合計
-- 分子: `dental_management.target_codes`（`B001-2`, `B001-3`）の都道府県別算定回数合計
-- 主要アウトカム: 周術期口腔ケア実施率（%）
+- POFM delivery varied **2.25-fold** across prefectures (68,804–154,850 claims per 100,000 population).
+- Cancer surgical demand was **not** associated with POFM provision (**0/7** sensitivity specifications).
+- **Dentist density** was the strongest predictor (Pearson *r* = 0.617, *p* < 0.0001).
+- Significant positive spatial autocorrelation (Moran's *I* = 0.210, *p* = 0.024) and LISA clusters were identified.
 
-抽出ロジック（`01_data_extraction.py`）: 医科・歯科とも **「分類コード」列**（「診療行為コード」数値列と区別）を用い、Excel 上で分類コードが空の **継続行**は直前行と同一ブロックとして前方埋めし合算する（`aggregate_classification_subrows`）。これにより K463 等の継続行が分母から漏れない。
+**Study design**: Cross-sectional ecological study | N = 47 prefectures | Fiscal Year 2023
 
-解釈: 分子・分母はいずれも **レセプト算定回数**であり、対象疾患・術式が一致する患者母集団比ではない。値は \((\text{分子}/\text{分母})\times 100\) なので **100 を大きく超えうる**（生態学的な「口腔ケア算定回数 ÷ 選択術式算定回数」のスケール）。
+**Manuscript**: Saito H, Ohira T. When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan. *(In submission, Health Policy, 2026)*
 
-注: 「計画策定料」を分子に追加する運用は現行版では採用しない。追加時は `config.yaml` と Methods を同時更新する。
+### 日本語
 
-## ディレクトリ構成（実体）
+本リポジトリは、NDB オープンデータ（2023 年度）を用い、日本 47 都道府県における**周術期口腔機能管理（POFM）**の地域格差を定量化した全国生態学研究の解析コードを公開するものです。
 
-```text
-NDB_XXX_perioperative_oral_care/
+**主要結果**:
+
+- POFM 算定密度は都道府県間で **2.25 倍**の格差（68,804–154,850 /10 万人）。
+- がん手術需要は POFM 提供と**関連なし**（感度分析 **0/7** 仕様）。
+- **歯科医師密度**が最強の規定因子（Pearson *r* = 0.617、*p* < 0.0001）。
+- 有意な空間的自己相関（Moran's *I* = 0.210、*p* = 0.024）および LISA クラスタを同定。
+
+**研究デザイン**: 横断的生態学的研究 | N = 47 都道府県 | 2023 年度（令和 5 年度）
+
+---
+
+## Data Sources / データソース
+
+| Source | Variables | 説明 |
+|--------|-----------|------|
+| NDB Open Data No.10 (MHLW, FY2023) | POFM fees (B001-2, B001-3); 16 major cancer surgery K-codes | 周術期口腔管理料・がん手術算定回数 |
+| Survey of Physicians, Dentists and Pharmacists 2022 (MHLW / e-Stat) | Dentists per 100,000 population | 歯科医師密度（令和 4 年） |
+| Prefecture-level covariates (population, aging rate, income, density) | Aging rate, per-capita income, population density | 共変量（整備済み CSV を使用） |
+| Japan prefecture boundaries (GeoJSON) | Spatial weights for Moran's I / SLM / LISA | 都道府県境界（Queen 隣接） |
+
+> **Note / 注意**: NDB raw data are not included in this repository and are not redistributable. Aggregate open data are available from the Ministry of Health, Labour and Welfare: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
+>
+> NDB 生データは本リポジトリに含まれておらず、再配布できません。集計オープンデータは厚生労働省ウェブサイトから入手可能です。
+
+---
+
+## Repository Structure / リポジトリ構造
+
+```
+NDB_POFM/
 ├── README.md
+├── LICENSE
+├── requirements.txt
 ├── config/
-│   └── config.yaml
-├── 00_Docs/
-│   └── implementation_plan.md                  # 要約メモ
+│   └── config.yaml                         # Surgery / POFM codes, paths / 手術・POFMコード・パス設定
 ├── 02_Data/
-│   ├── interim/                                # 中間CSV（本パイプライン出力）
-│   └── master/                                 # プロジェクト専用外部統計CSV
+│   ├── raw/                                # NDB Excel + GeoJSON (not in repo) / 生データ（リポジトリ外）
+│   ├── interim/                            # Intermediate CSV (excluded) / 中間 CSV（除外）
+│   └── master/                             # Dentist statistics CSV / 歯科医師統計
 ├── 03_Analysis/
-│   ├── 01_data_extraction.py
-│   ├── 02_calculate_implementation_rate.py
-│   ├── 03_integrate_covariates.py
-│   ├── 04_descriptive_stats.py
-│   ├── 05_regression_spatial.py
-│   ├── 06_visualization.py
-│   ├── check_*.py                              # 調査用（例: check_code_column_mapping.py）
-│   ├── scripts/01_extract_data.py              # 旧プロトタイプ（参照用）
-│   ├── logs/
-│   └── results/
-│       ├── tables/
-│       └── figures/
+│   ├── 01_data_extraction.py               # NDB extraction / NDB データ抽出
+│   ├── 02_calculate_implementation_rate.py # Claim counts merge / 算定回数統合
+│   ├── 03_integrate_covariates.py          # Covariates + per-100k rates / 共変量統合・人口補正
+│   ├── 04_descriptive_stats.py             # Descriptive statistics / 記述統計
+│   ├── 05_regression_spatial.py            # OLS, sensitivity, Moran's I, SLM / 回帰・空間統計
+│   ├── 06_visualization.py                 # Choropleth, scatter, forest, LISA / 図表作成
+│   ├── 07_power_analysis.py                # Post-hoc power / 事後検定力
+│   ├── 08_dentist_data.py                  # e-Stat dentist density download / 歯科医師密度取得
+│   ├── prefecture_labels_en.py             # English prefecture labels / 都道府県英語ラベル
+│   └── results/                            # Tables and figures / 出力表・図
+├── results/
+│   └── figures/                            # Manuscript-linked figures / 原稿用図
 └── 04_Manuscripts/
-    ├── AI_USE_DISCLOSURE.md
     ├── Manuscript_perioperative_oral_care.qmd
-    └── references.bib
+    ├── references.bib
+    └── vancouver.csl
 ```
 
-## 入出力パス方針
+---
 
-- 生データ: `02_Data/raw/`（読取専用）
-- 中間: `projects/NDB_XXX_perioperative_oral_care/02_Data/interim/`
-- 結果: `projects/NDB_XXX_perioperative_oral_care/03_Analysis/results/`
-- 既存の `projects/NDB_XXX_perioperative_oral_care/results/implementation_rate_by_prefecture.csv` は移行前成果として残置
+## Reproduction / 再現手順
 
-## 実行順序（再現手順）
+### Prerequisites / 必要環境
+
+- Python ≥ 3.10
+- [Quarto](https://quarto.org/) (for manuscript rendering / 論文レンダリング用)
+
+### Repository layout / リポジトリ配置
+
+Scripts import `ndb_library` from the **NDB_Research_Hub** monorepo and read covariate CSVs from sibling projects when available. For full reproduction:
+
+1. Clone this repository into `NDB_Research_Hub/projects/NDB_XXX_perioperative_oral_care/`, **or** clone the standalone repository and install `ndb_library` from the Hub (`pip install -e .` from Hub root).
+2. Ensure sibling project data exist, or place equivalent covariate files under `02_Data/master/` before running script 03.
+
+解析スクリプトは **NDB_Research_Hub** の `ndb_library` を参照します。完全再現には Hub 内配置、または Hub からの `pip install -e .` を推奨します。
+
+### Installation / インストール
 
 ```bash
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/01_data_extraction.py
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/02_calculate_implementation_rate.py
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/03_integrate_covariates.py
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/04_descriptive_stats.py
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/05_regression_spatial.py
-python projects/NDB_XXX_perioperative_oral_care/03_Analysis/06_visualization.py
+git clone https://github.com/haruki00430/NDB_POFM.git
+cd NDB_POFM
+python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+
+pip install -r requirements.txt
 ```
 
-## 論文レンダリング
+### Data Preparation / データ準備
+
+1. Download NDB Open Data No.10 from MHLW and place Excel files under `02_Data/raw/` as specified in `config/config.yaml`.  
+   NDB オープンデータ第 10 回を `config/config.yaml` のパスに従い `02_Data/raw/` に配置してください。
+
+2. Place Japan prefecture GeoJSON at `02_Data/raw/GIS/japan.geojson` (or update `config.yaml`).  
+   都道府県境界 GeoJSON を配置してください。
+
+3. (Recommended) Run `08_dentist_data.py` before script 03 to populate dentist density.  
+   歯科医師密度を使う解析の前に `08_dentist_data.py` の実行を推奨します。
+
+### Analysis / 解析実行
+
+Run scripts 01 through 07 in order (run 08 before 03 when dentist density is needed):  
+スクリプトを以下の順に実行してください（歯科医師密度が必要な場合は 03 の前に 08 を実行）：
 
 ```bash
-quarto render projects/NDB_XXX_perioperative_oral_care/04_Manuscripts/Manuscript_perioperative_oral_care.qmd --to docx
-quarto render projects/NDB_XXX_perioperative_oral_care/04_Manuscripts/Manuscript_perioperative_oral_care.qmd --to html
+python 03_Analysis/01_data_extraction.py
+python 03_Analysis/02_calculate_implementation_rate.py
+python 03_Analysis/08_dentist_data.py
+python 03_Analysis/03_integrate_covariates.py
+python 03_Analysis/04_descriptive_stats.py
+python 03_Analysis/05_regression_spatial.py
+python 03_Analysis/06_visualization.py
+python 03_Analysis/07_power_analysis.py
 ```
 
-## 関連ドキュメント
+---
 
-- `00_Docs/02_Implementation/implementation_plan_NDB_XXX_perioperative_oral_care.md`（正本）
-- `projects/NDB_XXX_perioperative_oral_care/04_Manuscripts/AI_USE_DISCLOSURE.md`
-- `CLAUDE.md`
+## Citation / 引用
+
+If you use this code, please cite the associated manuscript and code repository:  
+本コードを使用する場合は、論文とコードリポジトリの両方を引用してください：
+
+**Manuscript**:
+> Saito H, Ohira T. When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan. *(In submission, Health Policy, 2026)*
+
+**Code repository**:
+> Saito H. Analysis code for "When Universal Coverage Meets Local Capacity" [Software]. Zenodo. 2026. https://doi.org/10.5281/zenodo.20755757
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20755757.svg)](https://doi.org/10.5281/zenodo.20755757)
+
+---
+
+## Ethics / 倫理事項
+
+This study used publicly available aggregate data. Individual informed consent was not required, and institutional ethics review was not applicable in accordance with Japanese ethical guidelines for epidemiological research.
+
+本研究は公表集計データを使用しており、個人の同意取得および倫理審査委員会の審査は不要です（「疫学研究に関する倫理指針」に準拠）。
+
+---
+
+## License / ライセンス
+
+Analysis code is released under the [MIT License](LICENSE).  
+NDB Open Data is provided by the Ministry of Health, Labour and Welfare of Japan and is not redistributable as part of this repository.
+
+解析コードは MIT ライセンスで公開しています。NDB オープンデータは厚生労働省が提供するものであり、本リポジトリから再配布することはできません。

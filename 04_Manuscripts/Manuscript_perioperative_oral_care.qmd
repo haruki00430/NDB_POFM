@@ -1,10 +1,15 @@
 ---
-title: "Dental Workforce Supply Rather Than Surgical Demand Drives Regional Disparities in Perioperative Oral Care: A Prefectural Ecological Analysis Using Japanese NDB Open Data"
+title: "When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan"
 author:
-  - name: "[REPLACE: corresponding author full name]"
-    affiliations:
-      - "[REPLACE: institutional affiliation, city, country]"
-date: today
+  - name: "Haruki Saito"
+    affiliation: "Department of Epidemiology, Fukushima Medical University School of Medicine, Fukushima, Japan"
+    email: "m211039@fmu.ac.jp"
+    orcid: "0009-0009-7890-6068"
+    corresponding: true
+  - name: "Tetsuya Ohira"
+    affiliation: "Department of Epidemiology, Fukushima Medical University School of Medicine, Fukushima, Japan; Radiation Medical Science Center for the Fukushima Health Management Survey, Fukushima Medical University, Fukushima, Japan"
+    orcid: "0000-0003-4532-7165"
+date: "2026-06-19"
 format:
   html:
     toc: true
@@ -19,9 +24,27 @@ csl: ../vancouver.csl
 lang: en
 ---
 
+<!-- Health Policy (Elsevier) submission formatting -->
+<!-- FLA: ≤4,000 words main text | ≤4 figures+tables | double-anonymized peer review -->
+<!-- Main figures (body): Figure 1 (POFM choropleth) + Figure 5 (LISA map) = 2 figures -->
+<!-- Main tables (body): Table 1 (descriptive) + Table 2 (OLS regression) = 2 tables -->
+<!-- Appendix: Figures 2, 3, 4, 6; Table 3 (SLM); Supplementary Table S1 -->
+
+## Highlights {.unnumbered}
+
+- POFM delivery varied 2.25-fold across 47 Japanese prefectures
+- Cancer surgical demand was not associated with POFM (0/7 specifications)
+- Dentist density was the strongest predictor of POFM (r = 0.617, p < 0.0001)
+- Significant spatial clustering identified (Moran's I = 0.210, p = 0.024)
+- Supply-side capacity, not surgical need, drives regional POFM inequity in Japan
+
+---
+
 # Abstract
 
 **Background**: Perioperative oral functional management (POFM) has been promoted in Japan as part of integrated cancer care since its incorporation into the national fee schedule. However, regional variation in POFM provision at the prefectural level remains poorly characterised.
+
+**Objective**: To characterise prefectural variation in perioperative oral functional management (POFM) delivery across Japan, examine whether this variation was associated with cancer surgical demand or with dental workforce supply, and assess spatial clustering of POFM implementation.
 
 **Methods**: We conducted a cross-sectional ecological analysis using the 10th National Database of Health Insurance Claims and Specific Health Checkups (NDB Open Data; fiscal year 2023). The primary outcome was the prefectural POFM density, defined as the combined annual claim count for perioperative oral management fees (B001-2 and B001-3) per 100,000 population. The main exposure variable was major cancer surgery density (16 selected K-codes per 100,000 population). Ordinary least-squares (OLS) regression with HC3 robust standard errors was performed. Global Moran's I was used to test for spatial autocorrelation, followed by Lagrange Multiplier (LM) tests to select the appropriate spatial regression model.
 
@@ -29,10 +52,23 @@ lang: en
 
 **Conclusions**: Prefectural POFM density was strongly correlated with dental workforce supply (r = 0.617, p < 0.0001) but not with cancer surgical demand, and exhibited significant spatial clustering (Moran's I = 0.210, p = 0.024). These findings suggest that supply-side factors — particularly dental workforce capacity — rather than patient need, primarily drive geographic inequity in perioperative oral care provision in Japan.
 
-**Keywords**: perioperative oral care; regional disparities; NDB Open Data; ecological study; spatial autocorrelation; Japan
+**Keywords**: perioperative oral care; supply-driven care; need-based care; universal health coverage; implementation capacity; NDB Open Data; ecological study; spatial autocorrelation; Japan
 
+---
 
-**Keywords:** perioperative oral care; ecological study; Japan; health insurance claims
+## Research in Context {.unnumbered}
+
+**What is already known on this topic**
+
+Universal health coverage aims to ensure that evidence-based care reaches patients according to clinical need. Japan incorporated perioperative oral functional management (POFM) into its national health insurance fee schedule in 2012, with further reimbursement expansion in 2020 and 2022. Prior studies have documented postoperative benefits of POFM at the patient and hospital level, but prefecture-level variation in POFM implementation had not been characterised.
+
+**What this study adds**
+
+This nationwide prefectural ecological analysis of Japan's NDB Open Data (fiscal year 2023) demonstrates a 2.25-fold variation in POFM claim density across 47 prefectures. Cancer surgical demand—the primary clinical need indicator—was not significantly associated with POFM provision in any of seven pre-specified sensitivity specifications. By contrast, dentist density showed the strongest bivariate association (r = 0.617), and significant positive spatial autocorrelation was identified (Moran's I = 0.210, p = 0.024).
+
+**How this study might affect research, practice or policy**
+
+These findings indicate that reimbursement alone does not guarantee need-aligned implementation of POFM. Dental workforce capacity, hospital–dental integration, and referral infrastructure appear to be equally important determinants. For countries introducing perioperative oral care reimbursement, parallel investment in implementation capacity may be essential to prevent supply-driven inequity.
 
 ---
 
@@ -68,7 +104,7 @@ where B001-2 (Perioperative Oral Functional Management Fee I) and B001-3 (Periop
 
 ### Exposure Variable: Major Cancer Surgery Density
 
-The primary exposure variable was **major cancer surgery density**, defined as the annual claim count for 16 selected K-codes (Table 1) per 100,000 prefectural population. The selected codes covered thyroid cancer surgery (K463), pulmonary resections (K511, K513, K514-2), oesophageal resection (K529-2), gastrectomy (K655, K655-2), hepatectomy (K695, K695-2), colectomy (K719, K719-2, K719-3, K721-4), rectal resection (K740, K740-2), and nephroureterectomy (K773-2). All codes were extracted from the national inpatient procedure statistics published in the same open-data release.
+The primary exposure variable was **major cancer surgery density**, defined as the annual claim count for 16 selected K-codes (Table 1) per 100,000 prefectural population. The selected codes covered thyroid cancer surgery (K463), pulmonary resections (K511, K513, K514-2), oesophageal resection (K529-2), gastrectomy (K655, K655-2), hepatectomy (K695, K695-2), colectomy (K719, K719-2, K719-3, K721-4), rectal resection (K740, K740-2), and nephroureterectomy (K773-2). All codes were extracted from the national inpatient procedure statistics published in the same open-data release. These 16 procedures were selected to represent the principal oncological surgical procedures for which perioperative dental assessment and POFM referral are routinely recommended under the Japanese national health insurance fee schedule, encompassing the major cancer surgery types for which B001-2/3 claims are most frequently generated [@MHLW2022; @Ishimaru2018; @Shin2019; @Soutome2017; @Iwata2019; @Nobuhara2018; @Duan2025]. Because POFM eligibility also extends to chemotherapy and radiotherapy patients, cancer surgery density should be regarded as a pragmatic demand-side proxy rather than a comprehensive measure of total POFM-eligible need.
 
 ### Covariates
 
@@ -88,7 +124,7 @@ Two OLS regression models were estimated with HC3 heteroscedasticity-consistent 
 
 ### Sensitivity Analysis
 
-A pre-specified **sensitivity analysis** comprising seven model specifications was performed with cancer surgery density as the focus predictor and POFM density as the outcome (when applicable). The specifications were: baseline OLS with conventional standard errors; the same model with HC3 robust standard errors (primary specification); exclusion of prefectures with Cook's distance greater than 4/n; exclusion of the three largest urban prefectures (Tokyo, Osaka, Aichi); log-transformation of both outcome and exposure; addition of physicians per 100,000 population as an extra covariate; and addition of dentists per 100,000 population as an extra covariate (Specification 7).
+A pre-specified **sensitivity analysis** comprising seven model specifications was performed with cancer surgery density as the focus predictor and POFM density as the outcome (when applicable). The specifications were: baseline OLS with conventional standard errors; the same model with HC3 robust standard errors (primary specification); exclusion of prefectures with Cook's distance greater than 4/n; exclusion of the three central prefectures of Japan's three major metropolitan areas (Tokyo, Osaka, and Aichi); log-transformation of both outcome and exposure; addition of physicians per 100,000 population as an extra covariate; and addition of dentists per 100,000 population as an extra covariate (Specification 7).
 
 ### Spatial Analysis
 
@@ -200,6 +236,8 @@ Prior Japanese studies have examined POFM at the hospital or patient level and c
 
 Substantial prefectural variation in POFM density, combined with spatial spillover and LL clusters in peripheral regions, supports geographically targeted strengthening of hospital–dental collaboration, workforce training, and inter-prefectural knowledge transfer from HH clusters. Fee-schedule expansion alone may be insufficient without addressing supply-side capacity [@MHLW2022; @Ishimaru2022b].
 
+Beyond Japan, these findings carry implications for health systems considering the introduction of perioperative oral care reimbursement. As POFM efficacy in reducing postoperative complications is well established [@Ishimaru2018; @CamusJansson2023; @Shin2019; @Soutome2017; @Iwata2019; @Nobuhara2018; @Duan2025], reimbursement may increasingly be adopted internationally. However, this study suggests that coverage alone may be insufficient: parallel investment in dental workforce development, hospital-dental integration, referral pathway infrastructure, and multidisciplinary care routines may be equally necessary to translate formal eligibility into equitable access to evidence-based perioperative care.
+
 ## Conclusions
 
 This ecological analysis demonstrated substantial prefectural variation in perioperative oral management provision in Japan (2.25-fold range), which was not explained by regional cancer surgical demand. A Spatial Lag Model confirmed significant geographic spillover (ρ = 0.354, p = 0.002), and LISA analysis localised HH clusters to western Japan (Hyogo, Okayama, Saga) and LL clusters to peripheral regions (Hokkaido, Iwate, Okinawa). These findings suggest that supply-side and institutional factors — dental workforce capacity, hospital-dental integration, and regional professional networks — primarily govern POFM implementation disparities, and that geographic diffusion processes are operating at the prefectural level. Targeted policy interventions to strengthen POFM supply capacity in low-utilisation peripheral regions, combined with inter-prefectural knowledge-sharing from established HH clusters, represent a pragmatic strategy to reduce geographic inequity in perioperative oral care in Japan.
@@ -216,15 +254,21 @@ The authors declare no conflicts of interest.
 
 # Data Availability
 
-The NDB Open Data used in this analysis are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available from the corresponding author upon reasonable request.
+The NDB Open Data used in this analysis are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is openly available on GitHub (https://github.com/haruki00430/NDB_POFM) and archived on Zenodo (https://doi.org/10.5281/zenodo.20755757).
 
 # Author Contributions
 
-[REPLACE]
+Haruki Saito: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Software, Visualization, Writing – original draft, Writing – review and editing.
+
+Tetsuya Ohira: Conceptualization, Supervision, Writing – review and editing.
 
 # Funding
 
-[REPLACE]
+None declared.
+
+# Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process
+
+During the preparation and writing of this work, the authors used AI-assisted tools to support manuscript drafting and statistical analysis scripting. Cursor 3.0 (Anysphere) and Google Antigravity (Google) were used for AI-assisted writing and Python code development. Large language models used through these platforms included Claude Sonnet 4.6 and Claude Opus 4.8 (Anthropic) and GPT-5.5 (OpenAI) and Gemini 3 Pro (Google). These tools were used only for text drafting and code generation; no generative AI or AI-assisted tools were used to create, alter, or otherwise process any figures, images, or artwork in this manuscript. The authors reviewed and edited all AI-assisted outputs and were responsible for the study design, selection of statistical methods, interpretation of findings, conclusions, and final reference list. The authors take full responsibility for the integrity and accuracy of the final content. AI was not listed as an author.
 
 ---
 
@@ -279,19 +323,26 @@ The NDB Open Data used in this analysis are publicly available from the Ministry
 
 # Figures
 
+<!-- Health Policy submission: Main body figures = Figure 1 (POFM choropleth) + Figure 5 (LISA map) -->
+<!-- Figures 2, 3, 4, 6 → Appendix Figures A1–A4 in final submission DOCX -->
+
+## Main Figures {.unnumbered}
+
 **Figure 1**: Prefectural distribution of perioperative oral management (POFM) density (B001-2 + B001-3 claim counts per 100,000 population, FY2023).
 
 ![Choropleth map of POFM density by prefecture](../results/figures/choropleth_dental_mgmt_rate.png){width=80%}
 
-**Figure 2**: Prefectural distribution of major cancer surgery density (16 K-codes per 100,000 population, FY2023).
+## Appendix Figures {.unnumbered}
+
+**Appendix Figure A1** (QMD: Figure 2): Prefectural distribution of major cancer surgery density (16 K-codes per 100,000 population, FY2023).
 
 ![Choropleth map of cancer surgery density by prefecture](../results/figures/choropleth_cancer_surgery_rate.png){width=80%}
 
-**Figure 3**: Scatter plot of cancer surgery density vs. POFM density by prefecture (N = 47). The dashed line indicates the OLS regression fit (β = 98.3, p = 0.510).
+**Appendix Figure A2** (QMD: Figure 3): Scatter plot of cancer surgery density vs. POFM density by prefecture (N = 47). The dashed line indicates the OLS regression fit (β = 98.3, p = 0.510).
 
 ![Scatter plot of cancer surgery density vs. POFM density](../results/figures/scatter_surgery_vs_dental.png){width=75%}
 
-**Figure 4**: Forest plot of cancer surgery density regression coefficients across seven sensitivity analysis specifications. Bars represent 95% confidence intervals. Red = p<0.05; Blue = p≥0.05.
+**Appendix Figure A3** (QMD: Figure 4): Forest plot of cancer surgery density regression coefficients across seven sensitivity analysis specifications. Bars represent 95% confidence intervals. Red = p<0.05; Blue = p≥0.05.
 
 ![Forest plot of sensitivity analysis coefficients](../results/figures/forest_sensitivity.png){width=80%}
 
@@ -299,6 +350,29 @@ The NDB Open Data used in this analysis are publicly available from the Ministry
 
 ![LISA cluster map of POFM density](../results/figures/lisa_cluster_map.png){width=80%}
 
-**Figure 6**: Scatter plot of prefectural dentist density (dentists per 100,000 population, 2022) vs. POFM density (B001-2 + B001-3 per 100,000 population, FY2023) across 47 Japanese prefectures. Red labels = High-High LISA clusters (Hyogo, Okayama, Saga); Blue labels = Low-Low LISA clusters (Hokkaido, Iwate, Okinawa); Black labels = other prefectures. The solid line indicates the OLS regression fit (r = 0.617, p < 0.0001).
+**Appendix Figure A4** (QMD: Figure 6): Scatter plot of prefectural dentist density (dentists per 100,000 population, 2022) vs. POFM density (B001-2 + B001-3 per 100,000 population, FY2023) across 47 Japanese prefectures. Red labels = High-High LISA clusters (Hyogo, Okayama, Saga); Blue labels = Low-Low LISA clusters (Hokkaido, Iwate, Okinawa); Black labels = other prefectures. The solid line indicates the OLS regression fit (r = 0.617, p < 0.0001).
 
 ![Scatter plot of dentist density vs. POFM density](../results/figures/scatter_dentist_vs_dental.png){width=75%}
+
+---
+
+# Supplementary Material
+
+**Supplementary Table S1. Full regression coefficients for the Spatial Lag Model (SLM)**
+
+All model coefficients estimated by maximum likelihood using the SLM with Queen contiguity spatial weights (n = 47 prefectures).
+
+| Parameter | Coefficient | z-statistic | p-value |
+|---|---|---|---|
+| Intercept | 103,519.5 | 1.17 | 0.241 |
+| Cancer surgery density | 114.2 | 0.79 | 0.431 |
+| Aging rate | −1,562.2 | −0.87 | 0.385 |
+| Income per capita | −6.2 | −0.33 | 0.742 |
+| Population density | 8.1 | 1.81 | 0.071 |
+| Spatial lag (ρ) | 0.354 | 3.14 | **0.002** |
+| Pseudo-R² | 0.350 | — | — |
+| AIC | 1081.1 | — | — |
+| Log-likelihood | −534.5 | — | — |
+| n | 47 | — | — |
+
+*Coefficients for aging rate, income per capita, and population density are non-significant (p > 0.05). The significant spatial autoregressive coefficient (ρ) confirms geographic spillover in POFM uptake.*

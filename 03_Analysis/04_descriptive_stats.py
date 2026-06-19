@@ -1,5 +1,19 @@
 """
-Phase 4: 記述統計
+Script 04: Descriptive statistics for all 47 prefectures
+
+Computes mean, SD, min, max, and coefficient of variation for analysis
+variables. Exports summary tables with English prefecture labels.
+
+Outputs:
+  03_Analysis/results/tables/ranking_implementation_rate.csv
+  03_Analysis/results/tables/table1_descriptive.csv
+  03_Analysis/results/tables/correlation_matrix.csv
+
+---
+
+スクリプト 04: 記述統計
+
+47 都道府県の主要変数について記述統計量を算出し、表として出力する。
 """
 from __future__ import annotations
 

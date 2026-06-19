@@ -1,12 +1,22 @@
 """
-Phase 6: 可視化（改訂版 v2 - LISAマップ追加）
+Script 06: Manuscript figures (choropleth, scatter, forest, LISA map)
 
-【生成図一覧】
-  Fig 1: コロプレス図 — dental_mgmt_rate（周術期口腔管理密度）
-  Fig 2: コロプレス図 — cancer_surgery_rate（がん手術密度）
-  Fig 3: 散布図 — cancer_surgery_rate vs dental_mgmt_rate（都道府県ラベル付き）
-  Fig 4: Forest plot — 感度分析6仕様の回帰係数（cancer_surgery_rate）
-  Fig 5: LISA クラスタマップ — Local Moran's I（HH/HL/LH/LL/NS）
+Generates publication figures at 300 dpi:
+  Fig 1: POFM density choropleth
+  Fig 2: Cancer surgery density choropleth
+  Fig 3: Cancer surgery vs POFM scatter
+  Fig 4: Sensitivity analysis forest plot
+  Fig 5: LISA cluster map (Local Moran's I)
+  Fig 6: Dentist density vs POFM scatter (HH/LL clusters highlighted)
+
+Outputs: results/figures/ and 03_Analysis/results/figures/
+
+---
+
+スクリプト 06: 論文用図表の作成
+
+コロプレス図・散布図・フォレストプロット・LISA クラスタマップを
+300 dpi で出力する。
 """
 from __future__ import annotations
 
