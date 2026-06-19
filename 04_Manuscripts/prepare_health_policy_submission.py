@@ -114,7 +114,7 @@ print('4. Highlights added')
 # ── 5. ABSTRACT: add Objectives ───────────────────────────────────────────────
 bg_elem = find_in_body(r'^Background:')
 obj_text = (
-    'Objectives: To characterise prefectural variation in perioperative oral functional management '
+    'Objectives: To characterize prefectural variation in perioperative oral functional management '
     '(POFM) delivery across Japan, examine whether this variation was associated with cancer surgical '
     'demand or with dental workforce supply, and assess spatial clustering of POFM implementation.'
 )
@@ -267,17 +267,30 @@ add_before_end(sfig1_block)
 print('9. Tables/Figures restructured')
 
 # ── 10. ANONYMIZE AUTHOR CONTRIBUTIONS (end matter) ───────────────────────────
+AUTHOR_1 = (
+    '[Author 1]: Conceptualization, Data curation, Formal analysis, Investigation, '
+    'Methodology, Software, Visualization, Writing – original draft, '
+    'Writing – review and editing.'
+)
+AUTHOR_2 = (
+    '[Author 2]: Conceptualization, Supervision, Writing – review and editing.'
+)
 for p in get_paras():
     t = para_text(p._element)
-    if t.startswith('Haruki Saito:') or t.startswith('Tetsuya Ohira:'):
+    if t.startswith('Haruki Saito:'):
         for run in p.runs:
             run.text = ''
-    if t == 'Author Contributions':
+        if p.runs:
+            p.runs[0].text = AUTHOR_1
+        else:
+            p.add_run(AUTHOR_1)
+    elif t.startswith('Tetsuya Ohira:'):
         for run in p.runs:
-            run.text = (
-                '[Author contributions are provided on the separate title page '
-                'for double-anonymized peer review.]'
-            )
+            run.text = ''
+        if p.runs:
+            p.runs[0].text = AUTHOR_2
+        else:
+            p.add_run(AUTHOR_2)
 print('10. Author Contributions anonymized')
 
 # ── SAVE ─────────────────────────────────────────────────────────────────────

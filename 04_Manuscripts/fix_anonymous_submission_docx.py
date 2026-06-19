@@ -10,10 +10,20 @@ from docx import Document
 INPUT = Path("10Manuscript_health_policy_submission_v1_anonymous.docx")
 OUTPUT = INPUT
 
-AUTHOR_CONTRIB_REPLACEMENT = (
-    "[Author contributions are provided on the separate title page "
-    "for double-anonymized peer review.]"
+AUTHOR_1_LINE = (
+    "[Author 1]: Conceptualization, Data curation, Formal analysis, Investigation, "
+    "Methodology, Software, Visualization, Writing – original draft, "
+    "Writing – review and editing."
 )
+AUTHOR_2_LINE = (
+    "[Author 2]: Conceptualization, Supervision, Writing – review and editing."
+)
+
+UK_TO_US_SPELLING = {
+    "characterised": "characterized",
+    "characterise": "characterize",
+    "characterising": "characterizing",
+}
 
 # GitHub URL with username is omitted during double-blind review (Zenodo DOI only).
 DATA_AVAIL_BLINDED = (
@@ -32,6 +42,15 @@ DATA_AVAIL_IDENTIFYING_MARKERS = (
 )
 
 
+def _replace_paragraph_text(par, new_text: str) -> None:
+    for run in par.runs:
+        run.text = ""
+    if par.runs:
+        par.runs[0].text = new_text
+    else:
+        par.add_run(new_text)
+
+
 def main() -> None:
     doc = Document(INPUT)
     changed: list[str] = []
@@ -46,30 +65,31 @@ def main() -> None:
                     changed.append("Abstract: Objective → Objectives")
                     break
 
-        if text.startswith("Haruki Saito:") or text.startswith("Tetsuya Ohira:"):
-            for run in par.runs:
-                run.text = ""
-            changed.append(f"Removed identifying Author Contributions line: {text[:40]}...")
+        if text.startswith("Haruki Saito:"):
+            _replace_paragraph_text(par, AUTHOR_1_LINE)
+            changed.append("Author Contributions: [Author 1]")
+        elif text.startswith("Tetsuya Ohira:"):
+            _replace_paragraph_text(par, AUTHOR_2_LINE)
+            changed.append("Author Contributions: [Author 2]")
 
-        if text == "Author Contributions":
-            for run in par.runs:
-                run.text = AUTHOR_CONTRIB_REPLACEMENT
-            changed.append("Author Contributions section anonymized")
+        for run in par.runs:
+            if run.text:
+                updated = run.text
+                for uk, us in UK_TO_US_SPELLING.items():
+                    updated = updated.replace(uk, us)
+                if updated != run.text:
+                    run.text = updated
+                    changed.append("UK → US spelling (characterize)")
 
         if any(m in text for m in DATA_AVAIL_IDENTIFYING_MARKERS) or (
             "zenodo" in text.lower() and "github.com" in text.lower()
         ):
-            for run in par.runs:
-                run.text = ""
-            if par.runs:
-                par.runs[0].text = DATA_AVAIL_BLINDED
-            else:
-                par.add_run(DATA_AVAIL_BLINDED)
+            _replace_paragraph_text(par, DATA_AVAIL_BLINDED)
             changed.append("Data Availability blinded (Zenodo only)")
 
     doc.save(OUTPUT)
     print(f"Saved: {OUTPUT}")
-    for item in changed:
+    for item in dict.fromkeys(changed):
         print(f"  - {item}")
 
 
