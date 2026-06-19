@@ -79,7 +79,7 @@ add('Data Availability Statement:', bold=True, space_after=2)
 add(('The NDB Open Data used in this analysis are publicly available from the Ministry of Health, '
      'Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). '
      'Analysis code is openly available on GitHub (https://github.com/haruki00430/NDB_POFM) '
-     'and archived on Zenodo (https://doi.org/10.5281/zenodo.20755988).'), space_after=12)
+     'and archived on Zenodo (https://doi.org/10.5281/zenodo.20756030).'), space_after=12)
 
 add('AI Use Disclosure:', bold=True, space_after=2)
 add(('During the preparation and writing of this work, the authors used AI-assisted tools to support '

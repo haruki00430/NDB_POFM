@@ -45,7 +45,7 @@ These findings are directly relevant to *Health Policy*'s readership of research
 
 - **Novelty**: This manuscript has not been submitted elsewhere and is not under consideration by any other journal.
 - **Ethics**: This study used publicly available aggregate data (NDB Open Data, published by the Ministry of Health, Labour and Welfare of Japan). Individual informed consent and institutional ethics review were not required under Japanese ethical guidelines for epidemiological research using publicly disclosed aggregate statistics.
-- **Data availability**: NDB Open Data are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available at https://github.com/haruki00430/NDB_POFM and archived on Zenodo (https://doi.org/10.5281/zenodo.20755988).
+- **Data availability**: NDB Open Data are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available at https://github.com/haruki00430/NDB_POFM and archived on Zenodo (https://doi.org/10.5281/zenodo.20756030).
 - **Conflicts of interest**: The authors declare no conflicts of interest.
 - **Funding**: None declared.
 - **AI use disclosure**: AI-assisted tools (Claude, Anthropic) were used in manuscript preparation, including text editing and figure/table organisation. All intellectual content, analytical decisions, and interpretations are the sole responsibility of the authors.
