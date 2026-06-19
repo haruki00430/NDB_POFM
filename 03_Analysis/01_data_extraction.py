@@ -21,22 +21,17 @@ interim へ保存する。分類コード列を用い、空の継続行は前方
 """
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 from typing import Dict, Hashable
 
 import pandas as pd
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-PROJECT_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT))
+from _project_setup import DATA_ROOT, PROJECT_DIR, setup_project_logger
 
-from src.ndb_library.logger import setup_logger
-
-logger = setup_logger(
+logger = setup_project_logger(
     "perioperative_extract",
-    log_file=str(PROJECT_DIR / "03_Analysis" / "logs" / "01_data_extraction.log"),
+    PROJECT_DIR / "03_Analysis" / "logs" / "01_data_extraction.log",
 )
 
 
@@ -111,8 +106,8 @@ def main() -> None:
     config = read_config()
     masking_strategy = config["analysis_parameters"]["masking_strategy"]
 
-    med_path = REPO_ROOT / config["medical_surgery"]["data_path"]
-    den_path = REPO_ROOT / config["dental_management"]["data_path"]
+    med_path = DATA_ROOT / config["medical_surgery"]["data_path"]
+    den_path = DATA_ROOT / config["dental_management"]["data_path"]
     if not med_path.exists():
         raise FileNotFoundError(f"医科データが見つかりません: {med_path}")
     if not den_path.exists():

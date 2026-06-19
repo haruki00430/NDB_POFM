@@ -26,15 +26,11 @@ import pandas as pd
 import requests
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-PROJECT_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT))
+from _project_setup import PROJECT_DIR, setup_project_logger
 
-from src.ndb_library.logger import setup_logger
-
-logger = setup_logger(
+logger = setup_project_logger(
     "perioperative_dentist_data",
-    log_file=str(PROJECT_DIR / "03_Analysis" / "logs" / "08_dentist_data.log"),
+    PROJECT_DIR / "03_Analysis" / "logs" / "08_dentist_data.log",
 )
 
 # e-Stat 直接ダウンロード URL（API キー不要）

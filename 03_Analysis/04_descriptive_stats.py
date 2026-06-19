@@ -23,18 +23,16 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-PROJECT_DIR = Path(__file__).resolve().parents[1]
+from _project_setup import PROJECT_DIR, setup_project_logger
+
 _ANALYSIS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(_ANALYSIS_DIR))
 
 from prefecture_labels_en import prefecture_label_en
-from src.ndb_library.logger import setup_logger
 
-logger = setup_logger(
+logger = setup_project_logger(
     "perioperative_descriptive",
-    log_file=str(PROJECT_DIR / "03_Analysis" / "logs" / "04_descriptive_stats.log"),
+    PROJECT_DIR / "03_Analysis" / "logs" / "04_descriptive_stats.log",
 )
 
 

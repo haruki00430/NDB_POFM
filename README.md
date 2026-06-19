@@ -43,7 +43,7 @@ This repository contains analysis code for a nationwide prefectural ecological s
 |--------|-----------|------|
 | NDB Open Data No.10 (MHLW, FY2023) | POFM fees (B001-2, B001-3); 16 major cancer surgery K-codes | 周術期口腔管理料・がん手術算定回数 |
 | Survey of Physicians, Dentists and Pharmacists 2022 (MHLW / e-Stat) | Dentists per 100,000 population | 歯科医師密度（令和 4 年） |
-| Prefecture-level covariates (population, aging rate, income, density) | Aging rate, per-capita income, population density | 共変量（整備済み CSV を使用） |
+| Prefecture demographics master (bundled in repo) | Population, aging rate, income, density, physicians/100k | `02_Data/master/prefecture_demographics_covariates.csv` |
 | Japan prefecture boundaries (GeoJSON) | Spatial weights for Moran's I / SLM / LISA | 都道府県境界（Queen 隣接） |
 
 > **Note / 注意**: NDB raw data are not included in this repository and are not redistributable. Aggregate open data are available from the Ministry of Health, Labour and Welfare: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
@@ -64,7 +64,9 @@ NDB_POFM/
 ├── 02_Data/
 │   ├── raw/                                # NDB Excel + GeoJSON (not in repo) / 生データ（リポジトリ外）
 │   ├── interim/                            # Intermediate CSV (excluded) / 中間 CSV（除外）
-│   └── master/                             # Dentist statistics CSV / 歯科医師統計
+│   └── master/                             # Bundled prefecture masters / 都道府県マスター（同梱）
+│       ├── prefecture_demographics_covariates.csv
+│       └── dentist_statistics_2022.csv
 ├── 03_Analysis/
 │   ├── 01_data_extraction.py               # NDB extraction / NDB データ抽出
 │   ├── 02_calculate_implementation_rate.py # Claim counts merge / 算定回数統合
@@ -95,12 +97,14 @@ NDB_POFM/
 
 ### Repository layout / リポジトリ配置
 
-Scripts import `ndb_library` from the **NDB_Research_Hub** monorepo and read covariate CSVs from sibling projects when available. For full reproduction:
+This repository is **self-contained for prefecture-level covariates** (`02_Data/master/`).  
+NDB Open Data Excel files and prefecture GeoJSON must be obtained separately (see Data Preparation).
 
-1. Clone this repository into `NDB_Research_Hub/projects/NDB_XXX_perioperative_oral_care/`, **or** clone the standalone repository and install `ndb_library` from the Hub (`pip install -e .` from Hub root).
-2. Ensure sibling project data exist, or place equivalent covariate files under `02_Data/master/` before running script 03.
+都道府県マスター共変量はリポジトリに同梱済みです。NDB 生データと GeoJSON のみ別途入手が必要です。
 
-解析スクリプトは **NDB_Research_Hub** の `ndb_library` を参照します。完全再現には Hub 内配置、または Hub からの `pip install -e .` を推奨します。
+Optional: clone inside `NDB_Research_Hub/projects/` if you already use the shared `02_Data/raw/` tree at the Hub root.
+
+Hub 直下の共有 `02_Data/raw/` を使う場合は、モノレポ内配置でも構いません。
 
 ### Installation / インストール
 

@@ -24,7 +24,6 @@ LM 検定、空間ラグモデル（SLM）を実行する。
 """
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -32,15 +31,11 @@ import pandas as pd
 import statsmodels.api as sm
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-PROJECT_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT))
+from _project_setup import DATA_ROOT, PROJECT_DIR, setup_project_logger
 
-from src.ndb_library.logger import setup_logger
-
-logger = setup_logger(
+logger = setup_project_logger(
     "perioperative_regression_spatial",
-    log_file=str(PROJECT_DIR / "03_Analysis" / "logs" / "05_regression_spatial.log"),
+    PROJECT_DIR / "03_Analysis" / "logs" / "05_regression_spatial.log",
 )
 
 Y_COL = "dental_mgmt_rate"
@@ -390,7 +385,7 @@ def main() -> None:
         from esda.moran import Moran
         from libpysal.weights import Queen
 
-        geojson_path = REPO_ROOT / cfg["input_paths"]["spatial_geojson"]
+        geojson_path = DATA_ROOT / cfg["input_paths"]["spatial_geojson"]
         geo = gpd.read_file(str(geojson_path))
         # pref_code の型を str に統一（dtype 不一致バグの修正）
         geo["pref_code"] = geo["id"].astype(str).str.zfill(2)

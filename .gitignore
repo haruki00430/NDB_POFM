@@ -18,11 +18,16 @@ ENV/
 
 02_Data/raw/
 02_Data/processed/
+02_Data/interim/
 *.csv
 *.xlsx
 *.parquet
 *.sqlite
 *.db
+
+# Master reference CSVs (prefecture-level aggregate statistics; redistributable)
+!02_Data/master/
+!02_Data/master/*.csv
 
 *.log
 05_Outputs/figures/

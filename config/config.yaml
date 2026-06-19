@@ -76,19 +76,17 @@ external_statistics:
     year: 2022               # 令和4年（医師・歯科医師・薬剤師調査、2年ごと実施）
     path: "02_Data/master/dentist_statistics_2022.csv"
 
-  # SharedWorkspace 流用（既存プロジェクトの整備済みデータ）
-  dental_systemic_population:
-    path: "projects/NDB_XXX_dental_systemic/02_Data/interim/dental_disease_prefecture.csv"
+  # 都道府県別人口・社会経済共変量（リポジトリ同梱マスター）
+  prefecture_demographics:
+    path: "02_Data/master/prefecture_demographics_covariates.csv"
     prefecture_col: "prefecture"
-    use_cols: ["prefecture", "population"]
-  dental_systemic_covariates:
-    path: "projects/NDB_XXX_dental_systemic/02_Data/interim/analysis_dataset_v2.csv"
-    prefecture_col: "prefecture"
-    use_cols: ["prefecture", "aging_rate", "income_per_capita", "pop_density"]
-  temperature_covariates:
-    path: "projects/NDB_XXX_temperature_emergency/data/interim/03_covariates.csv"
-    prefecture_col: "prefecture"
-    use_cols: ["prefecture", "pop_density", "physicians_per_100k"]
+    use_cols:
+      - "prefecture"
+      - "population"
+      - "aging_rate"
+      - "income_per_capita"
+      - "pop_density"
+      - "physicians_per_100k"
 
 output_paths:
   interim: "02_Data/interim"

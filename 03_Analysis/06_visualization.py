@@ -30,18 +30,16 @@ import numpy as np
 import pandas as pd
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-PROJECT_DIR = Path(__file__).resolve().parents[1]
+from _project_setup import DATA_ROOT, PROJECT_DIR, setup_project_logger
+
 _ANALYSIS_DIR = Path(__file__).resolve().parent
-sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(_ANALYSIS_DIR))
 
 from prefecture_labels_en import prefecture_label_en
-from src.ndb_library.logger import setup_logger
 
-logger = setup_logger(
+logger = setup_project_logger(
     "perioperative_visualization",
-    log_file=str(PROJECT_DIR / "03_Analysis" / "logs" / "06_visualization.log"),
+    PROJECT_DIR / "03_Analysis" / "logs" / "06_visualization.log",
 )
 DPI = 300
 CMAP_DENTAL = "OrRd"
@@ -312,7 +310,7 @@ def main() -> None:
     # -------------------------------------------------------------------------
     # GeoJSON の読み込み・マージ
     # -------------------------------------------------------------------------
-    geo = gpd.read_file(str(REPO_ROOT / cfg["input_paths"]["spatial_geojson"]))
+    geo = gpd.read_file(str(DATA_ROOT / cfg["input_paths"]["spatial_geojson"]))
     geo["pref_code"] = geo["id"].astype(str).str.zfill(2)
     merge_cols = ["pref_code", "dental_mgmt_rate", "cancer_surgery_rate"]
     if "dentists_per_100k" in df.columns:
