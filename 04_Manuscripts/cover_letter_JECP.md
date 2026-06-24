@@ -62,7 +62,7 @@ We believe this study makes a timely and relevant contribution to the evaluation
 
 Yours sincerely,
 
-**Haruki Saito, MD**  
+**Haruki Saito**  
 Department of Epidemiology, Fukushima Medical University School of Medicine  
 1 Hikarigaoka, Fukushima-shi, Fukushima 960-1295, Japan  
 Email: m211039@fmu.ac.jp  

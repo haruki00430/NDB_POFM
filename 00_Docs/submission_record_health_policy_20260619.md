@@ -4,7 +4,9 @@
 **投稿日**: 2026-06-19 15:31  
 **Manuscript ID**: **HEAP-D-26-01327**  
 **ジャーナル**: *Health Policy* (Elsevier)  
-**ステータス追跡**: https://www.editorialmanager.com/heap/default.aspx
+**ステータス**: ❌ **Desk Reject** — 2026-06-24（Editor-in-Chief: Wilm Quentin）  
+**理由**: 「十分な支持が得られなかった」— 科学的問題なし  
+**次の対応**: JECP（Wiley）へ再投稿済み → Manuscript ID: **2340680**（2026-06-24）
 
 ---
 
