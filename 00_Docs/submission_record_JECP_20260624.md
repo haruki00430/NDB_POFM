@@ -34,7 +34,7 @@
 | 前投稿開示 | カバーレターに記載（HEAP-D-26-01327 desk reject） |
 | Publishing option | Subscription（無料） |
 | GitHub | https://github.com/haruki00430/NDB_POFM |
-| Zenodo DOI | https://doi.org/10.5281/zenodo.20756258 (v1.0.3) |
+| Zenodo DOI | https://doi.org/10.5281/zenodo.20827647 (v1.0.4) |
 
 ---
 

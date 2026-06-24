@@ -44,13 +44,13 @@ These findings are directly relevant to the journal's mission of evaluating clin
 - **Nationwide census**: All 47 Japanese prefectures included; no sampling bias.
 - **Robust null finding**: Consistent across 7 pre-specified sensitivity specifications.
 - **Spatial epidemiology**: Formal spatial autocorrelation analysis (Moran's I, LISA, spatial lag model) strengthens interpretation.
-- **Transparent and open science**: Analysis code is openly available via GitHub (https://github.com/haruki00430/NDB_POFM) and Zenodo (https://doi.org/10.5281/zenodo.20756258).
+- **Transparent and open science**: Analysis code is openly available via GitHub (https://github.com/haruki00430/NDB_POFM) and Zenodo (https://doi.org/10.5281/zenodo.20827647).
 
 ## Declarations
 
 - **Previous submission**: Previously submitted to *Health Policy* (Elsevier; HEAP-D-26-01327); desk rejected 24 June 2026 without peer review. Elsevier's automated transfer recommendation was declined. Not submitted elsewhere.
 - **Ethics**: This study used publicly available aggregate data (NDB Open Data, published by the Ministry of Health, Labour and Welfare of Japan). Individual informed consent and institutional ethics review were not required under Japanese ethical guidelines for epidemiological research using publicly disclosed aggregate statistics (Ethical Guidelines for Medical and Health Research Involving Human Subjects, Ministry of Health, Labour and Welfare, Japan).
-- **Data availability**: NDB Open Data are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available at https://github.com/haruki00430/NDB_POFM and archived on Zenodo (https://doi.org/10.5281/zenodo.20756258).
+- **Data availability**: NDB Open Data are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available at https://github.com/haruki00430/NDB_POFM and archived on Zenodo (https://doi.org/10.5281/zenodo.20827647).
 - **Conflicts of interest**: The authors declare no conflicts of interest.
 - **Funding**: None declared.
 - **AI use disclosure**: AI-assisted tools (Claude, Anthropic) were used in manuscript preparation, including text editing and figure/table organisation. All intellectual content, analytical decisions, and interpretations are the sole responsibility of the authors.
