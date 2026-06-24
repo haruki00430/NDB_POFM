@@ -71,10 +71,7 @@
 | `STROBE_checklist.docx` | STROBEチェックリスト | Supporting Information |
 | `Figure3_choropleth_pofm.png` | Fig.1 Choropleth地図（本文Figure 1；ファイル名はFigure3） | Figure |
 | `Figure6_lisa_cluster_map.png` | Fig.2 LISA クラスターマップ（本文Figure 2；ファイル名はFigure6） | Figure |
-| `AppendixFigureA1_cancer_surgery.png` | 付録図A1 | Supporting Information |
-| `AppendixFigureA2_scatter_surgery.png` | 付録図A2 | Supporting Information |
-| `AppendixFigureA4_forest_sensitivity.png` | 付録図A4 | Supporting Information |
-| `AppendixFigureA5_scatter_dentist.png` | 付録図A5 | Supporting Information |
+| `supplementary_material.docx` | 補足資料一括（Appendix Fig A1–A4・Suppl.Fig S1・Suppl.Table S1、全図埋め込み済み） | Supplementary Material for Review |
 
 > **Health Policy から除外したもの**: highlights.docx / highlights.txt / title_page.docx（JECP不要）
 
@@ -202,10 +199,7 @@ projects/NDB_XXX_perioperative_oral_care/
 │       ├── STROBE_checklist.docx
 │       ├── Figure3_choropleth_pofm.png
 │       ├── Figure6_lisa_cluster_map.png
-│       ├── AppendixFigureA1_cancer_surgery.png
-│       ├── AppendixFigureA2_scatter_surgery.png
-│       ├── AppendixFigureA4_forest_sensitivity.png
-│       ├── AppendixFigureA5_scatter_dentist.png
+│       ├── supplementary_material.docx  ← 付録図A1–A4・S1・Table S1 全て埋め込み
 │       └── README_UPLOAD_ORDER.md
 ```
 
