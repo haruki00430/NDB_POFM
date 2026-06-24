@@ -150,7 +150,7 @@
 - [x] Elsevier Transfer 推薦メール → "Decline all" をクリック
 - [x] Abstract ラベルを JECP 形式に修正（原稿内で修正済み）
 - [x] Wiley Authors portal で投稿完了（2026-06-24 21:36 / **Manuscript ID: 2340680**）
-- [ ] 大平先生にメール送信（teoohira@fmu.ac.jp）— §9 のメール文面を使用
+- [x] 大平先生にメール送信（teoohira@fmu.ac.jp）— 2026-06-24 送信済み
 
 ---
 
