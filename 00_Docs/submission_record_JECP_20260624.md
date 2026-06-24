@@ -69,8 +69,8 @@
 | `manuscript_main.docx` | 原稿本体 | Main Document |
 | `cover_letter_JECP.docx` | カバーレター（前投稿歴開示あり） | Cover Letter |
 | `STROBE_checklist.docx` | STROBEチェックリスト | Supporting Information |
-| `Figure3_choropleth_pofm.png` | Fig.1 Choropleth地図（本文Figure 1；ファイル名はFigure3） | Figure |
-| `Figure6_lisa_cluster_map.png` | Fig.2 LISA クラスターマップ（本文Figure 2；ファイル名はFigure6） | Figure |
+| `Figure1_choropleth_pofm.png` | 本文 Figure 1 POFM Choropleth | Figure |
+| `Figure2_lisa_cluster_map.png` | 本文 Figure 2 LISA クラスターマップ | Figure |
 | `supplementary_material.docx` | 補足資料一括（Appendix Fig A1–A4・Suppl.Fig S1・Suppl.Table S1、全図埋め込み済み） | Supplementary Material for Review |
 
 > **Health Policy から除外したもの**: highlights.docx / highlights.txt / title_page.docx（JECP不要）
