@@ -53,10 +53,10 @@ These findings are directly relevant to the journal's mission of evaluating clin
 - **Data availability**: NDB Open Data are publicly available from the Ministry of Health, Labour and Welfare of Japan (https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html). Analysis code is available at https://github.com/haruki00430/NDB_POFM and archived on Zenodo (https://doi.org/10.5281/zenodo.20827647).
 - **Conflicts of interest**: The authors declare no conflicts of interest.
 - **Funding**: None declared.
-- **AI use disclosure**: AI-assisted tools (Claude, Anthropic) were used in manuscript preparation, including text editing and figure/table organisation. All intellectual content, analytical decisions, and interpretations are the sole responsibility of the authors.
+- **AI use disclosure**: AI-assisted tools were used to support statistical analysis scripting and manuscript drafting. Development platforms included Cursor 3.0 (Anysphere) and Google Antigravity (Google), employing large language models including Claude Sonnet 4.6 and Claude Opus 4.8 (Anthropic), GPT-5.5 (OpenAI), and Gemini 3 Pro (Google). These tools were used exclusively for code generation and text drafting; no AI was used to create, alter, or process any figures, images, or artwork. All study design decisions, selection of statistical methods, interpretation of findings, and conclusions are the sole responsibility of the authors.
 - **Reporting guideline**: A completed STROBE checklist for observational research is submitted as a supplementary file.
 - **Word count**: Approximately 2,325 words (body text, excluding Abstract, References, Tables, and Figure legends), well within the journal's 5,000-word limit.
-- **Figures and Tables**: 4 items in the main body (Table 1, Table 2, Figure 1, Figure 2); 5 supplementary figures (Appendix A1–A5).
+- **Figures and Tables**: 4 items in the main body (Table 1, Table 2, Figure 1, Figure 2). Supplementary material (submitted as a single file) contains Appendix Figures A1, A2, A4, A5, Supplementary Figure S1, and Supplementary Table S1. (Note: Appendix Figure A3 is not present; the numbering gap reflects the original figure sequence in which that figure appears as main Figure 1.)
 
 We believe this study makes a timely and relevant contribution to the evaluation of clinical practice implementation under universal coverage, and we hope it will be of interest to readers of *Journal of Evaluation in Clinical Practice*. We look forward to your consideration.
 

@@ -35,15 +35,16 @@ JECP（Wiley）投稿用ステージングフォルダ。
 
 | ファイル | 役割 | 備考 |
 |---------|------|------|
-| `manuscript_main.docx` | 原稿本体（Main document） | 著者名入り・Single-blind対応済み |
+| `manuscript_main.docx` | 原稿本体（Main document） | 著者名入り・Single-blind対応済み・Figure 1・2 埋め込み済み |
+| `supplementary_material.docx` | 補足資料一括（Supplementary） | AppendixFig A1/A2/A4/A5・Suppl.Fig S1・Suppl.Table S1 全て埋め込み済み |
 | `cover_letter_JECP.docx` | カバーレター | pandoc変換済み ✅ |
 | `STROBE_checklist.docx` | STROBEチェックリスト | Health Policy版から流用 |
-| `Figure3_choropleth_pofm.png` | Fig.1 Choropleth地図（ファイル名はFigure3だが本文ではFigure 1） | 主要図 |
-| `Figure6_lisa_cluster_map.png` | Fig.2 LISA クラスターマップ（ファイル名はFigure6だが本文ではFigure 2） | 主要図 |
-| `AppendixFigureA1_cancer_surgery.png` | 付録図A1 | Supplementary |
-| `AppendixFigureA2_scatter_surgery.png` | 付録図A2 | Supplementary |
-| `AppendixFigureA4_forest_sensitivity.png` | 付録図A4 | Supplementary |
-| `AppendixFigureA5_scatter_dentist.png` | 付録図A5 | Supplementary |
+| `Figure3_choropleth_pofm.png` | 本文 Fig.1 POFM Choropleth（ファイル名はFigure3、内容は本文 Figure 1） | 主要図・内容確認済み ✅ |
+| `Figure6_lisa_cluster_map.png` | 本文 Fig.2 LISA クラスターマップ（ファイル名はFigure6、内容は本文 Figure 2） | 主要図・内容確認済み ✅ |
+
+> ⚠️ **AppendixFigureA1〜A5 の独立PNG は使用しない**  
+> これらはファイル名と内容が一致しないラベル誤りが判明済み。  
+> 付録・補足の全図は `supplementary_material.docx` に正しく埋め込まれているため、DOCX 1ファイルで提出する。
 
 > **Health Policy との差異**: JECP は Highlights 不要。Title Page も不要（Wiley フォームで入力）。
 
@@ -77,17 +78,16 @@ JECP（Wiley）投稿用ステージングフォルダ。
 
 ### Step 4: File Upload（推奨順）
 
-| 順序 | ファイル | Wiley ファイルタイプ |
-|------|---------|-------------------|
-| 1 | `manuscript_main.docx` | Main Document |
-| 2 | `cover_letter_JECP.docx` | Cover Letter |
-| 3 | `Figure3_choropleth_pofm.png` | Figure |
-| 4 | `Figure6_lisa_cluster_map.png` | Figure |
-| 5 | `STROBE_checklist.docx` | Supporting Information |
-| 6 | `AppendixFigureA1_cancer_surgery.png` | Supporting Information |
-| 7 | `AppendixFigureA2_scatter_surgery.png` | Supporting Information |
-| 8 | `AppendixFigureA4_forest_sensitivity.png` | Supporting Information |
-| 9 | `AppendixFigureA5_scatter_dentist.png` | Supporting Information |
+| 順序 | ファイル | Wiley ファイルタイプ | 備考 |
+|------|---------|-------------------|------|
+| 1 | `manuscript_main.docx` | Main Document | 本文 + Table 1/2 + Figure 1/2 埋め込み |
+| 2 | `supplementary_material.docx` | Supplementary Material for Review | 全付録図・補足表を一括収録 |
+| 3 | `cover_letter_JECP.docx` | Cover Letter | |
+| 4 | `Figure3_choropleth_pofm.png` | Figure | 本文 Figure 1（POFM choropleth） |
+| 5 | `Figure6_lisa_cluster_map.png` | Figure | 本文 Figure 2（LISA cluster map） |
+| 6 | `STROBE_checklist.docx` | Additional File for Review but Not for Publication | |
+
+> ❌ **AppendixFigureA1〜A5 の個別PNG はアップロードしない**（ラベル誤り確認済み・DOCX内に正しく埋め込み済み）
 
 ### Step 5: Ethics & Declarations
 | 項目 | 対応 |
