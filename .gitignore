@@ -93,3 +93,14 @@ data/temp/**/*.xml
 # Editorial Manager 投稿パッケージ（ローカル専用・再生成可）
 # ----------------------------------------------------------------
 04_Manuscripts/submission_package/
+
+# ----------------------------------------------------------------
+# 投稿往復メール・内部作業文書（プライベート）
+# ----------------------------------------------------------------
+04_Manuscripts/Gmail*.pdf
+04_Manuscripts/Journal of Evaluation*.pdf
+説明責任資料*.md
+デスクトップ用/
+
+# JECP パッケージ内バックアップ（不要）
+04_Manuscripts/submission_package_JECP/manuscript_main_BACKUP.docx
