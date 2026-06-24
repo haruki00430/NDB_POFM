@@ -22,13 +22,12 @@ JECP（Wiley）投稿用ステージングフォルダ。
 
 | 役割 | パス |
 |------|------|
-| **原稿（匿名化版）** | `submission_package_JECP/manuscript_main.docx` |
+| **原稿（著者名入り・投稿版）** | `submission_package_JECP/manuscript_main.docx` |
 | 原稿ソース（QMD） | `04_Manuscripts/Manuscript_perioperative_oral_care.qmd` |
 | カバーレター（MD） | `04_Manuscripts/cover_letter_JECP.md` |
 
-> **注意（Single-blind）**: JECPは Single-blind 査読のため著者名を原稿に含めてもよい。  
-> 現在の `manuscript_main.docx` は匿名化版だが、**Wiley Authors の投稿フォームで著者情報を別途入力するため投稿には支障なし**。  
-> 著者名入り版が必要な場合は QMD から再コンパイル。
+> **Single-blind 対応済み**: JECP は Single-blind 査読のため著者名を含めて投稿可。  
+> `manuscript_main.docx` の Author Contributions には "Haruki Saito" / "Tetsuya Ohira" を明記済み。
 
 ---
 
@@ -36,8 +35,8 @@ JECP（Wiley）投稿用ステージングフォルダ。
 
 | ファイル | 役割 | 備考 |
 |---------|------|------|
-| `manuscript_main.docx` | 原稿本体（Main document） | 匿名化版（投稿可） |
-| `cover_letter_JECP.docx` | カバーレター | ★ **pandoc変換が必要**（後述） |
+| `manuscript_main.docx` | 原稿本体（Main document） | 著者名入り・Single-blind対応済み |
+| `cover_letter_JECP.docx` | カバーレター | pandoc変換済み ✅ |
 | `STROBE_checklist.docx` | STROBEチェックリスト | Health Policy版から流用 |
 | `Figure3_choropleth_pofm.png` | Fig.3 Choropleth地図 | 主要図 |
 | `Figure6_lisa_cluster_map.png` | Fig.6 LISA クラスターマップ | 主要図 |
@@ -47,15 +46,6 @@ JECP（Wiley）投稿用ステージングフォルダ。
 | `AppendixFigureA5_scatter_dentist.png` | 付録図A5 | Supplementary |
 
 > **Health Policy との差異**: JECP は Highlights 不要。Title Page も不要（Wiley フォームで入力）。
-
----
-
-## カバーレター DOCX 変換
-
-```bash
-cd 04_Manuscripts
-pandoc cover_letter_JECP.md -o submission_package_JECP/cover_letter_JECP.docx
-```
 
 ---
 
@@ -73,7 +63,7 @@ pandoc cover_letter_JECP.md -o submission_package_JECP/cover_letter_JECP.docx
 | Title | When Universal Coverage Meets Local Capacity: A Prefectural Ecological Analysis of Perioperative Oral Care in Japan |
 | Running title | Perioperative Oral Care Under Universal Coverage |
 | Abstract | 原稿のAbstractをそのまま貼付（構造化済み・約245語） |
-| Keywords | perioperative oral care; geographic variation; supply sensitivity; Japan; ecological study; spatial autocorrelation; universal health coverage |
+| Keywords | perioperative oral care; supply-driven care; universal health coverage; NDB Open Data; ecological study; spatial autocorrelation; Japan |
 
 > **Keywords について**: MeSH推奨。上記7語をそのまま使用可（MeSH確認済みに相当）。
 
@@ -126,5 +116,5 @@ pandoc cover_letter_JECP.md -o submission_package_JECP/cover_letter_JECP.docx
 - [x] 前投稿歴開示（カバーレターに記載）
 - [x] Highlights 不要（JECP規定に該当項目なし）
 - [x] Title Page 不要（Wileyフォームで入力）
-- [ ] カバーレター DOCX 変換（pandoc実行）
+- [x] カバーレター DOCX 変換（pandoc実行 ✅）
 - [ ] Wiley Authors portal で投稿完了
