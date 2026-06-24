@@ -56,7 +56,7 @@ These findings are directly relevant to the journal's mission of evaluating clin
 - **AI use disclosure**: AI-assisted tools (Claude, Anthropic) were used in manuscript preparation, including text editing and figure/table organisation. All intellectual content, analytical decisions, and interpretations are the sole responsibility of the authors.
 - **Reporting guideline**: A completed STROBE checklist for observational research is submitted as a supplementary file.
 - **Word count**: Approximately 2,325 words (body text, excluding Abstract, References, Tables, and Figure legends), well within the journal's 5,000-word limit.
-- **Figures and Tables**: 4 items in the main body (Table 1, Table 2, Figure 3, Figure 6); 5 supplementary figures (Appendix A1–A5).
+- **Figures and Tables**: 4 items in the main body (Table 1, Table 2, Figure 1, Figure 2); 5 supplementary figures (Appendix A1–A5).
 
 We believe this study makes a timely and relevant contribution to the evaluation of clinical practice implementation under universal coverage, and we hope it will be of interest to readers of *Journal of Evaluation in Clinical Practice*. We look forward to your consideration.
 

@@ -69,8 +69,8 @@
 | `manuscript_main.docx` | 原稿本体 | Main Document |
 | `cover_letter_JECP.docx` | カバーレター（前投稿歴開示あり） | Cover Letter |
 | `STROBE_checklist.docx` | STROBEチェックリスト | Supporting Information |
-| `Figure3_choropleth_pofm.png` | Fig.3 Choropleth地図 | Figure |
-| `Figure6_lisa_cluster_map.png` | Fig.6 LISA クラスターマップ | Figure |
+| `Figure3_choropleth_pofm.png` | Fig.1 Choropleth地図（本文Figure 1；ファイル名はFigure3） | Figure |
+| `Figure6_lisa_cluster_map.png` | Fig.2 LISA クラスターマップ（本文Figure 2；ファイル名はFigure6） | Figure |
 | `AppendixFigureA1_cancer_surgery.png` | 付録図A1 | Supporting Information |
 | `AppendixFigureA2_scatter_surgery.png` | 付録図A2 | Supporting Information |
 | `AppendixFigureA4_forest_sensitivity.png` | 付録図A4 | Supporting Information |

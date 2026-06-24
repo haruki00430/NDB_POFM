@@ -38,8 +38,8 @@ JECP（Wiley）投稿用ステージングフォルダ。
 | `manuscript_main.docx` | 原稿本体（Main document） | 著者名入り・Single-blind対応済み |
 | `cover_letter_JECP.docx` | カバーレター | pandoc変換済み ✅ |
 | `STROBE_checklist.docx` | STROBEチェックリスト | Health Policy版から流用 |
-| `Figure3_choropleth_pofm.png` | Fig.3 Choropleth地図 | 主要図 |
-| `Figure6_lisa_cluster_map.png` | Fig.6 LISA クラスターマップ | 主要図 |
+| `Figure3_choropleth_pofm.png` | Fig.1 Choropleth地図（ファイル名はFigure3だが本文ではFigure 1） | 主要図 |
+| `Figure6_lisa_cluster_map.png` | Fig.2 LISA クラスターマップ（ファイル名はFigure6だが本文ではFigure 2） | 主要図 |
 | `AppendixFigureA1_cancer_surgery.png` | 付録図A1 | Supplementary |
 | `AppendixFigureA2_scatter_surgery.png` | 付録図A2 | Supplementary |
 | `AppendixFigureA4_forest_sensitivity.png` | 付録図A4 | Supplementary |
