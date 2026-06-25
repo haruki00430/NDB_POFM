@@ -4,7 +4,8 @@
 **準備完了日**: 2026-06-24  
 **ジャーナル**: *Journal of Evaluation in Clinical Practice* (Wiley)  
 **投稿システム**: https://authors.wiley.com/journal/JEP  
-**ステータス**: ✅ **投稿完了** — Manuscript ID: **2340680** (2026-06-24 21:36)
+**ステータス**: ✅ **再投稿完了** — Manuscript ID: **2340680**  
+　初回投稿: 2026-06-24 21:36 → 編集部より著者情報・Funding追記要求（2026-06-25）→ 修正再投稿: **2026-06-25 22:40**
 
 ---
 
@@ -18,6 +19,8 @@
 | 2026-06-24 | Elsevier Transfer 推薦を**Decline**（ユーザー操作） |
 | 2026-06-24 | JECP 向け submission_package_JECP 作成完了 |
 | 2026-06-24 21:36 | **JECP 投稿完了** — Manuscript ID: **2340680**（jecpoffice@wiley.com より受領） |
+| 2026-06-25 21:14 | 編集部より "Manuscript returned to draft" — 著者情報・Funding statement の原稿内記載を要求 |
+| 2026-06-25 22:40 | **修正再投稿完了**（著者ブロック追加・Funding文言をWiley標準に更新） |
 
 ---
 
